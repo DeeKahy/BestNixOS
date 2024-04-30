@@ -24,7 +24,7 @@
 
     cmatrix
     vesktop
-    tree 
+    tree
     firefox
     kate
     neovim
@@ -35,7 +35,6 @@
     gcc
     xsel
     python3
-    rustup
     ripgrep
     heroic
     lutris
