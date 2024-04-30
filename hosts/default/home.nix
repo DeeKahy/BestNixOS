@@ -24,6 +24,7 @@
 
     cmatrix
     vesktop
+    
     firefox
     kate
     neovim
