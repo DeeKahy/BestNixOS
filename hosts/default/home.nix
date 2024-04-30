@@ -44,7 +44,7 @@
     nodejs
     jetbrains.idea-ultimate
 
-
+    cargo
 
     zoxide # Added zoxide
     bat # Added bat
