@@ -35,6 +35,8 @@
     gcc
     xsel
     python3
+    python3Packages.pip
+    python3Packages.pyperclip # Make sure this package exists in your nixpkgs version
     ripgrep
     heroic
     lutris
