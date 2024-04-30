@@ -45,10 +45,6 @@
     jetbrains.idea-ultimate
 
     cargo
-    xcbutilxrm
-    xorg.xcbutilrenderutil
-    xorg.xcbutilimage
-    xorg.libxcb
 
     zoxide # Added zoxide
     bat # Added bat
