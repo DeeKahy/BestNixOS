@@ -45,6 +45,8 @@
     nodejs
     jetbrains.idea-ultimate
 
+
+
     zoxide # Added zoxide
     bat # Added bat
     eza
