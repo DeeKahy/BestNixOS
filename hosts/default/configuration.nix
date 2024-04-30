@@ -2,13 +2,12 @@
 
 {
   nix.settings.experimental-features = "nix-command flakes";
-
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./deekahy.nix
-    inputs.home-manager.nixosModules.default
-  ];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./deekahy.nix
+      inputs.home-manager.nixosModules.default
+    ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -24,6 +23,7 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_DK.UTF-8";
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";
     LC_IDENTIFICATION = "da_DK.UTF-8";
@@ -36,24 +36,19 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-  # Configure X11 and SDDM
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbOptions = "eurosign:e";
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
 
-    displayManager = {
-      sddm = {
-        enable = true;
-      };
-    };
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "deekahy";
 
-    desktopManager = {
-      plasma5 = {
-        enable = true;
-      };
-    };
-  };
+  services.xserver.desktopManager.plasma5.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.variant = "";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -69,7 +64,9 @@
     pulse.enable = true;
   };
 
-  system.stateVersion = "unstable"; # Confirm you understand the implications
-  hardware.bluetooth.enable = true; # Enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # Powers up the default Bluetooth controller on boot
+
+  system.stateVersion = "unstable"; # Did you read the comment?
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 }
+
