@@ -7,18 +7,6 @@
     description = "DeeKahy";
     extraGroups = [ "networkmanager" "wheel" "disk" ];
     packages = with pkgs; [
-      zoxide # Added zoxide
-      bat # Added bat
-      eza
-      protonup-qt
-      unityhub
-      jetbrains.rider
-      ffmpeg
-      davinci-resolve-studio
-      lazygit
-      dotnetCorePackages.sdk_6_0_1xx
-      emacs
-      wget
     ];
 
     password = "sunsil";
