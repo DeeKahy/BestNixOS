@@ -34,9 +34,9 @@
     warp-terminal
     gcc
     xsel
-    python3
-    python3Packages.pip
-    python3Packages.pyperclip # Make sure this package exists in your nixpkgs version
+    (python3.withPackages (ps: [
+      ps.pyperclip  # Assuming pyperclip is available here
+    ]))
     ripgrep
     heroic
     lutris
