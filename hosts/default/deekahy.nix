@@ -22,7 +22,6 @@ home-manager = {
 
   environment.interactiveShellInit = ''
     eval "$(zoxide init bash --cmd z)"
-    alias cat="bat"
     alias cd="z"
     alias ls="eza"
   '';
