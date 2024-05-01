@@ -50,7 +50,7 @@ home-manager = {
 
   environment.variables = {
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
-    FLAKE = "/home/deekahy/dotfiles/nixos/";
+    FLAKE = "/home/deekahy/dotfiles/nixos";
   };
   environment.systemPackages = with pkgs; [
   nh
