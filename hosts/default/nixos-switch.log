@@ -1,35 +1,25 @@
 warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
-warning: updating lock file '/home/deekahy/dotfiles/nixos/flake.lock':
-• Removed input 'hyprland'
-• Removed input 'hyprland/hyprcursor'
-• Removed input 'hyprland/hyprcursor/hyprlang'
-• Removed input 'hyprland/hyprcursor/nixpkgs'
-• Removed input 'hyprland/hyprcursor/systems'
-• Removed input 'hyprland/hyprland-protocols'
-• Removed input 'hyprland/hyprland-protocols/nixpkgs'
-• Removed input 'hyprland/hyprland-protocols/systems'
-• Removed input 'hyprland/hyprlang'
-• Removed input 'hyprland/hyprlang/nixpkgs'
-• Removed input 'hyprland/hyprlang/systems'
-• Removed input 'hyprland/hyprwayland-scanner'
-• Removed input 'hyprland/hyprwayland-scanner/nixpkgs'
-• Removed input 'hyprland/hyprwayland-scanner/systems'
-• Removed input 'hyprland/nixpkgs'
-• Removed input 'hyprland/systems'
-• Removed input 'hyprland/wlroots'
-• Removed input 'hyprland/xdph'
-• Removed input 'hyprland/xdph/hyprland-protocols'
-• Removed input 'hyprland/xdph/hyprlang'
-• Removed input 'hyprland/xdph/nixpkgs'
-• Removed input 'hyprland/xdph/systems'
-warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
 building the system configuration...
 warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
-stopping the following units: systemd-modules-load.service, systemd-sysctl.service, systemd-udevd-control.socket, systemd-udevd-kernel.socket, systemd-udevd.service
+these 6 derivations will be built:
+  /nix/store/cyvvwb02w2jyaga2p1xr5g1x60s96wsa-etc-pam-environment.drv
+  /nix/store/qcd9a8b022v07lkap55g7fx0hnwbxyig-set-environment.drv
+  /nix/store/wp53h36s1krrm8k57jm5c2d5mw71wb6p-system-units.drv
+  /nix/store/x3brgag56z365jgpb062wnav2svbnvk2-etc-profile.drv
+  /nix/store/5ccdhbgvqy7x85d8d0kyazkqkb0liwvx-etc.drv
+  /nix/store/d8qv8xb1qzyg970md2igygrrs86qnbzw-nixos-system-nixos-24.05.20240427.58a1abd.drv
+building '/nix/store/cyvvwb02w2jyaga2p1xr5g1x60s96wsa-etc-pam-environment.drv'...
+building '/nix/store/qcd9a8b022v07lkap55g7fx0hnwbxyig-set-environment.drv'...
+building '/nix/store/wp53h36s1krrm8k57jm5c2d5mw71wb6p-system-units.drv'...
+building '/nix/store/x3brgag56z365jgpb062wnav2svbnvk2-etc-profile.drv'...
+building '/nix/store/5ccdhbgvqy7x85d8d0kyazkqkb0liwvx-etc.drv'...
+building '/nix/store/d8qv8xb1qzyg970md2igygrrs86qnbzw-nixos-system-nixos-24.05.20240427.58a1abd.drv'...
+stopping the following units: accounts-daemon.service
 activating the configuration...
 setting up /etc...
 reloading user units for deekahy...
 restarting sysinit-reactivation.target
 reloading the following units: dbus-broker.service
-starting the following units: systemd-modules-load.service, systemd-sysctl.service, systemd-udevd-control.socket, systemd-udevd-kernel.socket
+restarting the following units: polkit.service
+starting the following units: accounts-daemon.service
 the following new units were started: sysinit-reactivation.target, systemd-tmpfiles-resetup.service
