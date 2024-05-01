@@ -51,10 +51,13 @@ home-manager = {
   environment.variables = {
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
   };
-  environment.sessionVariables = {
-    FLAKE = "/home/deekahy/dotfiles/nixos";
-  };
   environment.systemPackages = with pkgs; [
     nh
   ];
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/user/my-nixos-config";
+  };
 }
