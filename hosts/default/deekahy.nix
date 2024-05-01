@@ -33,6 +33,8 @@ home-manager = {
     dedicatedServer.openFirewall = true;
   };
 
+
+
   programs.kdeconnect.enable = true; 
 
   nixpkgs.config.allowUnfree = true;
