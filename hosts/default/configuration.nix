@@ -80,8 +80,6 @@
     pulse.enable = true;
   };
 
-
-
   environment.interactiveShellInit = ''
     eval "$(zoxide init bash --cmd z)"
     alias cd="z"
@@ -93,7 +91,6 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
-
 
 
   programs.kdeconnect.enable = true; 
@@ -112,9 +109,11 @@
   environment.variables = {
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
   };
+  
   environment.systemPackages = with pkgs; [
     nh
   ];
+
   programs.nh = {
     enable = true;
     clean.enable = true;
