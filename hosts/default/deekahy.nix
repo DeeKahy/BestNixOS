@@ -58,7 +58,10 @@ home-manager = {
   environment.systemPackages = with pkgs; [
     nh
     waybar
+    dunst
   ];
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   programs.nh = {
     enable = true;
     clean.enable = true;
