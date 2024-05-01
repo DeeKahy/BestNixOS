@@ -47,6 +47,7 @@
     jetbrains.idea-ultimate
 
     cargo
+gnutar
 
     zoxide # Added zoxide
     bat # Added bat
