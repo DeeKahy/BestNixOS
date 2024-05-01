@@ -61,7 +61,6 @@ gnutar
     dotnetCorePackages.sdk_6_0_1xx
     emacs
     wget
-    nh
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
