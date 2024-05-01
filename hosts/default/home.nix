@@ -19,46 +19,55 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    cmatrix
-    vesktop
-    tree
+    # applications
     firefox
     kate
     neovim
     thunderbird
-    git
-    steam
     warp-terminal
+    github-desktop
+    jetbrains.idea-ultimate
+    protonup-qt
+    unityhub
+    jetbrains.rider
+    davinci-resolve-studio
+    emacs
+
+
+    # gaming
+    steam
+    heroic
+    lutris
+    vesktop
+    
+
+    # terminal tools
+    tree
+    git
+    ripgrep
+    wget
+    eza
+    bat
+    zoxide # Added zoxide
+
+# dumb dependencies
     gcc
     xsel
     (python3.withPackages (ps: [
       ps.pyperclip  # Assuming pyperclip is available here
     ]))
-    ripgrep
-    heroic
-    lutris
     openjdk21
     maven
-    github-desktop
     nodejs
-    jetbrains.idea-ultimate
-
     cargo
-    gnutar
-
-    zoxide # Added zoxide
-    bat # Added bat
-    eza
-    protonup-qt
-    unityhub
-    jetbrains.rider
-    ffmpeg
-    davinci-resolve-studio
-    lazygit
+    gnutar # i dont remember why i needed this 
     dotnetCorePackages.sdk_6_0_1xx
-    emacs
-    wget
-    curl
+    ffmpeg
+    lazygit
+
+
+# fun
+    cmatrix
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
