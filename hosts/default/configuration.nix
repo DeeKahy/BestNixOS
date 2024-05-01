@@ -1,26 +1,43 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
+  users.users.deekahy = {
+    isNormalUser = true;
+    description = "DeeKahy";
+    extraGroups = [ "networkmanager" "wheel" "disk" ];
+    packages = with pkgs; [
+    ];
+
+    password = "sunsil";
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "deekahy" = import ./home.nix;
+    };
+  };
+
   nix.settings.experimental-features = "nix-command flakes";
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
 
-  # Bootloader.
+# Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+# Enable networking
+    networking.networkmanager.enable = true;
 
-  # Set your time zone.
+# Set your time zone.
   time.timeZone = "Europe/Copenhagen";
 
-  # Select internationalisation properties.
+# Select internationalisation properties.
   i18n.defaultLocale = "en_DK.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -35,24 +52,24 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-  # Enable the X11 windowing system.
+# Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
+# Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "deekahy";
 
   services.xserver.desktopManager.plasma5.enable = true;
 
-  # Configure keymap in X11
+# Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
 
-  # Enable CUPS to print documents.
+# Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+# Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -63,29 +80,13 @@
     pulse.enable = true;
   };
 
-  users.users.deekahy = {
-    isNormalUser = true;
-    description = "DeeKahy";
-    extraGroups = [ "networkmanager" "wheel" "disk" ];
-    packages = with pkgs; [
-    ];
-
-    password = "sunsil";
-  };
-
-home-manager = {
-  extraSpecialArgs = { inherit inputs; };
-  users = {
-      "deekahy" = import ./home.nix;
-    };
-};
 
 
   environment.interactiveShellInit = ''
     eval "$(zoxide init bash --cmd z)"
     alias cd="z"
     alias ls="eza"
-  '';
+    '';
 
   programs.steam = {
     enable = true;
@@ -122,7 +123,7 @@ home-manager = {
   };
 
   system.stateVersion = "unstable"; # Did you read the comment?
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    hardware.bluetooth.enable = true; # enables support for Bluetooth
+    hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 }
 
