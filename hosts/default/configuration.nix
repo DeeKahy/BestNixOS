@@ -44,8 +44,11 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "deekahy";
 
-  services.xserver.desktopManager.plasma5.enable = true;
-
+  services.xserver.desktopManager.plasma5.enable = false;
+ boot.extraModprobeConfig = ''
+   config.sddm.useWayland = true;  
+   config.sddm.sessionDesktop = "plasmawayland";
+ '';
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
