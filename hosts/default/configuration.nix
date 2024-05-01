@@ -112,6 +112,8 @@
   
   environment.systemPackages = with pkgs; [
     nh
+    nix-output-monitor
+    nvd
   ];
 
   programs.nh = {
