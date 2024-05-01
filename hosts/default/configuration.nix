@@ -1,7 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  programs.hyprland.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
   imports =
     [ # Include the results of the hardware scan.
@@ -10,21 +9,15 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  # Bootloader.
+  # Bootloader settings
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-
-  # Enable networking
+  # Basic system settings
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_DK.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";
     LC_IDENTIFICATION = "da_DK.UTF-8";
@@ -37,24 +30,23 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # Disable the X11 windowing system and KDE Plasma
+  services.xserver.enable = false;
+  services.displayManager.sddm.enable = false;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "deekahy";
+  # Enable Hyprland with Wayland
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
 
-  services.xserver.desktopManager.plasma5.enable = true;
+  # Correct NVIDIA driver settings
+  hardware.nvidia = {
+    modesetting.enable = true;
+  };
 
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "us";
-  services.xserver.xkb.variant = "";
-
-  # Enable CUPS to print documents.
+  # System services configuration
   services.printing.enable = true;
-
-  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -65,9 +57,10 @@
     pulse.enable = true;
   };
 
+  # Bluetooth settings
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
-  system.stateVersion = "unstable"; # Did you read the comment?
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  # Miscellaneous settings
+  system.stateVersion = "unstable"; # Keep track of NixOS version compatibility
 }
-
