@@ -47,8 +47,7 @@
     jetbrains.idea-ultimate
 
     cargo
-    gnutar
-    neofetch
+gnutar
 
     zoxide # Added zoxide
     bat # Added bat

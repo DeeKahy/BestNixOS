@@ -36,12 +36,6 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-
-
-programs.hyprland = {
-  enable = true;
-  xwayland.enable = true;
-};
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 

@@ -51,21 +51,13 @@ home-manager = {
   environment.variables = {
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
   };
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-      
-  };
   environment.systemPackages = with pkgs; [
     nh
-    waybar
-    dunst
   ];
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   programs.nh = {
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/deekahy/dotfiles/nixos/";
+    flake = "/home/deekahy/dotfiles/nixos";
   };
 }
