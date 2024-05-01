@@ -38,11 +38,11 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  #
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  # };
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
@@ -53,12 +53,12 @@
     nvidia.modesetting.enable = true;
   };
 
-  # # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.autoLogin.enable = true;
-  # services.displayManager.autoLogin.user = "deekahy";
-  #
-  # services.xserver.desktopManager.plasma5.enable = true;
+ # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "deekahy";
+
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
