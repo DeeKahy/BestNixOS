@@ -57,6 +57,7 @@ home-manager = {
   };
   environment.systemPackages = with pkgs; [
     nh
+    waybar
   ];
   programs.nh = {
     enable = true;
