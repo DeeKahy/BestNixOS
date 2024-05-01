@@ -1,7 +1,35 @@
 warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
+warning: updating lock file '/home/deekahy/dotfiles/nixos/flake.lock':
+• Removed input 'hyprland'
+• Removed input 'hyprland/hyprcursor'
+• Removed input 'hyprland/hyprcursor/hyprlang'
+• Removed input 'hyprland/hyprcursor/nixpkgs'
+• Removed input 'hyprland/hyprcursor/systems'
+• Removed input 'hyprland/hyprland-protocols'
+• Removed input 'hyprland/hyprland-protocols/nixpkgs'
+• Removed input 'hyprland/hyprland-protocols/systems'
+• Removed input 'hyprland/hyprlang'
+• Removed input 'hyprland/hyprlang/nixpkgs'
+• Removed input 'hyprland/hyprlang/systems'
+• Removed input 'hyprland/hyprwayland-scanner'
+• Removed input 'hyprland/hyprwayland-scanner/nixpkgs'
+• Removed input 'hyprland/hyprwayland-scanner/systems'
+• Removed input 'hyprland/nixpkgs'
+• Removed input 'hyprland/systems'
+• Removed input 'hyprland/wlroots'
+• Removed input 'hyprland/xdph'
+• Removed input 'hyprland/xdph/hyprland-protocols'
+• Removed input 'hyprland/xdph/hyprlang'
+• Removed input 'hyprland/xdph/nixpkgs'
+• Removed input 'hyprland/xdph/systems'
+warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
 building the system configuration...
 warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
+stopping the following units: systemd-modules-load.service, systemd-sysctl.service, systemd-udevd-control.socket, systemd-udevd-kernel.socket, systemd-udevd.service
 activating the configuration...
 setting up /etc...
 reloading user units for deekahy...
 restarting sysinit-reactivation.target
+reloading the following units: dbus-broker.service
+starting the following units: systemd-modules-load.service, systemd-sysctl.service, systemd-udevd-control.socket, systemd-udevd-kernel.socket
+the following new units were started: sysinit-reactivation.target, systemd-tmpfiles-resetup.service
