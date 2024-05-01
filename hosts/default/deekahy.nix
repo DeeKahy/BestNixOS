@@ -52,7 +52,6 @@ home-manager = {
   };
   environment.systemPackages = with pkgs; [
     nh
-    hyprland
   ];
   programs.nh = {
     enable = true;

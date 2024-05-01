@@ -1,32 +1,35 @@
 warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
+warning: updating lock file '/home/deekahy/dotfiles/nixos/flake.lock':
+• Removed input 'hyprland'
+• Removed input 'hyprland/hyprcursor'
+• Removed input 'hyprland/hyprcursor/hyprlang'
+• Removed input 'hyprland/hyprcursor/nixpkgs'
+• Removed input 'hyprland/hyprcursor/systems'
+• Removed input 'hyprland/hyprland-protocols'
+• Removed input 'hyprland/hyprland-protocols/nixpkgs'
+• Removed input 'hyprland/hyprland-protocols/systems'
+• Removed input 'hyprland/hyprlang'
+• Removed input 'hyprland/hyprlang/nixpkgs'
+• Removed input 'hyprland/hyprlang/systems'
+• Removed input 'hyprland/hyprwayland-scanner'
+• Removed input 'hyprland/hyprwayland-scanner/nixpkgs'
+• Removed input 'hyprland/hyprwayland-scanner/systems'
+• Removed input 'hyprland/nixpkgs'
+• Removed input 'hyprland/systems'
+• Removed input 'hyprland/wlroots'
+• Removed input 'hyprland/xdph'
+• Removed input 'hyprland/xdph/hyprland-protocols'
+• Removed input 'hyprland/xdph/hyprlang'
+• Removed input 'hyprland/xdph/nixpkgs'
+• Removed input 'hyprland/xdph/systems'
+warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
 building the system configuration...
 warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
-these 11 derivations will be built:
-  /nix/store/xj6lr0jfx3pxlvmyvm4ckmrpsni40iy6-system-path.drv
-  /nix/store/izsx20ynqjcci5gswc87pl0lqwkvzg93-dbus-1.drv
-  /nix/store/w8mvia8640527gvyzncpw68l70sqk81x-X-Restart-Triggers-dbus-broker.drv
-  /nix/store/d9q3x35h4y6lvsza37h2yidizahxlrpb-unit-dbus-broker.service.drv
-  /nix/store/1n7d93z7rz3rl26brdxbyd8gf1k759qk-user-units.drv
-  /nix/store/6c46y3ig35hhgq2xb9z9bd7djjj0y4mj-X-Restart-Triggers-polkit.drv
-  /nix/store/177hx2cas4b7qfj35n83cj89mghh2800-unit-polkit.service.drv
-  /nix/store/qhr9rk1zs5ha9saxs602d4094032gvnw-unit-dbus-broker.service.drv
-  /nix/store/6dqj9cq32g5g3c8kpqd95pglcbvc04h8-system-units.drv
-  /nix/store/h7f30wg0afm2hc6x9k3wn8c71cfd0mxq-etc.drv
-  /nix/store/0r5f1a8phry9c8zw31a6h6sd4qrxrvmy-nixos-system-nixos-24.05.20240427.58a1abd.drv
-building '/nix/store/xj6lr0jfx3pxlvmyvm4ckmrpsni40iy6-system-path.drv'...
-building '/nix/store/6c46y3ig35hhgq2xb9z9bd7djjj0y4mj-X-Restart-Triggers-polkit.drv'...
-building '/nix/store/izsx20ynqjcci5gswc87pl0lqwkvzg93-dbus-1.drv'...
-building '/nix/store/177hx2cas4b7qfj35n83cj89mghh2800-unit-polkit.service.drv'...
-building '/nix/store/w8mvia8640527gvyzncpw68l70sqk81x-X-Restart-Triggers-dbus-broker.drv'...
-building '/nix/store/d9q3x35h4y6lvsza37h2yidizahxlrpb-unit-dbus-broker.service.drv'...
-building '/nix/store/qhr9rk1zs5ha9saxs602d4094032gvnw-unit-dbus-broker.service.drv'...
-building '/nix/store/1n7d93z7rz3rl26brdxbyd8gf1k759qk-user-units.drv'...
-building '/nix/store/6dqj9cq32g5g3c8kpqd95pglcbvc04h8-system-units.drv'...
-building '/nix/store/h7f30wg0afm2hc6x9k3wn8c71cfd0mxq-etc.drv'...
-building '/nix/store/0r5f1a8phry9c8zw31a6h6sd4qrxrvmy-nixos-system-nixos-24.05.20240427.58a1abd.drv'...
+stopping the following units: systemd-modules-load.service, systemd-sysctl.service, systemd-udevd-control.socket, systemd-udevd-kernel.socket, systemd-udevd.service
 activating the configuration...
 setting up /etc...
 reloading user units for deekahy...
 restarting sysinit-reactivation.target
 reloading the following units: dbus-broker.service
-restarting the following units: polkit.service
+starting the following units: systemd-modules-load.service, systemd-sysctl.service, systemd-udevd-control.socket, systemd-udevd-kernel.socket
+the following new units were started: sysinit-reactivation.target, systemd-tmpfiles-resetup.service

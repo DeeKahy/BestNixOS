@@ -9,15 +9,21 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  # Bootloader settings
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Basic system settings
-  networking.hostName = "nixos";
+  networking.hostName = "nixos"; # Define your hostname.
+
+  # Enable networking
   networking.networkmanager.enable = true;
+
+  # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
+
+  # Select internationalisation properties.
   i18n.defaultLocale = "en_DK.UTF-8";
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";
     LC_IDENTIFICATION = "da_DK.UTF-8";
@@ -30,23 +36,24 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-  # Disable the X11 windowing system and KDE Plasma
-  services.xserver.enable = false;
-  services.displayManager.sddm.enable = false;
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
 
-  # Enable Hyprland with Wayland
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  };
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "deekahy";
 
-  # Correct NVIDIA driver settings
-  hardware.nvidia = {
-    modesetting.enable = true;
-  };
+  services.xserver.desktopManager.plasma5.enable = true;
 
-  # System services configuration
+  # Configure keymap in X11
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.variant = "";
+
+  # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -57,10 +64,9 @@
     pulse.enable = true;
   };
 
-  # Bluetooth settings
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
 
-  # Miscellaneous settings
-  system.stateVersion = "unstable"; # Keep track of NixOS version compatibility
+  system.stateVersion = "unstable"; # Did you read the comment?
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 }
+
