@@ -48,6 +48,7 @@
 
     cargo
     gnutar
+    neofetch
 
     zoxide # Added zoxide
     bat # Added bat
