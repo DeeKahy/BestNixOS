@@ -1,23 +1,15 @@
 warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
-error:
-       … while calling the 'seq' builtin
-
-         at /nix/store/801l7gvdz7yaibhjsxqx82sc7zkakjbq-source/lib/modules.nix:322:18:
-
-          321|         options = checked options;
-          322|         config = checked (removeAttrs config [ "_module" ]);
-             |                  ^
-          323|         _module = checked (config._module);
-
-       … while evaluating a branch condition
-
-         at /nix/store/801l7gvdz7yaibhjsxqx82sc7zkakjbq-source/lib/modules.nix:261:9:
-
-          260|       checkUnmatched =
-          261|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [] then
-             |         ^
-          262|           let
-
-       (stack trace truncated; use '--show-trace' to show the full trace)
-
-       error: getting status of '/nix/store/pji40dipnq3nvlg89yxs2f5rf0dw1kr9-source/flake-overrides.nix': No such file or directory
+building the system configuration...
+warning: Git tree '/home/deekahy/dotfiles/nixos' is dirty
+trace: warning: The option `services.xserver.displayManager.defaultSession' defined in `/nix/store/msd5dbypdkw6hcidbqmhpv6gz3r7wkxy-source/hosts/default/configuration.nix' has been renamed to `services.displayManager.defaultSession'.
+these 3 derivations will be built:
+  /nix/store/jvxnc0na5jix5rn0xqk99gshqm5ddk8w-sddm.conf.drv
+  /nix/store/1qggdrx3x78frc7plzsb46vdlxlx4g92-etc.drv
+  /nix/store/0ykdcji02x12mdgpm8fgg450iiinnksq-nixos-system-nixos-24.05.20240427.58a1abd.drv
+building '/nix/store/jvxnc0na5jix5rn0xqk99gshqm5ddk8w-sddm.conf.drv'...
+building '/nix/store/1qggdrx3x78frc7plzsb46vdlxlx4g92-etc.drv'...
+building '/nix/store/0ykdcji02x12mdgpm8fgg450iiinnksq-nixos-system-nixos-24.05.20240427.58a1abd.drv'...
+activating the configuration...
+setting up /etc...
+reloading user units for deekahy...
+restarting sysinit-reactivation.target

@@ -16,7 +16,6 @@
       modules = [
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
-flake-overrides.nix
       ];
     };
   };

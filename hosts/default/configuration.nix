@@ -45,7 +45,7 @@
   services.displayManager.autoLogin.user = "deekahy";
 
   services.xserver.desktopManager.plasma5.enable = true;
-
+services.xserver.displayManager.defaultSession = "plasmawayland"; # For KDE Plasma
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
