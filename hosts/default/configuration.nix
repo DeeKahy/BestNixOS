@@ -61,7 +61,7 @@
   services.displayManager.autoLogin.user = "deekahy";
 
   services.xserver.desktopManager.plasma5.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
 
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
