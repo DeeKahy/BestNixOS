@@ -57,10 +57,11 @@
 
 # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "deekahy";
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "deekahy";
 
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
