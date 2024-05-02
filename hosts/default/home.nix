@@ -32,6 +32,7 @@
     jetbrains.rider
     davinci-resolve-studio
     emacs
+    kcalc
 
 
     # gaming
