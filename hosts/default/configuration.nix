@@ -137,6 +137,9 @@ environment.sessionVariables = {
 )
     dunst
     libnotify
+    swww
+    kitty
+    rofi-wayland
   ];
 
   programs.nh = {
