@@ -33,6 +33,7 @@
     davinci-resolve-studio
     emacs
     kcalc
+gnome.gnome-calculator
 
 
     # gaming
