@@ -139,6 +139,7 @@ environment.sessionVariables = {
     libnotify
     swww
     kitty
+    protonup
     rofi-wayland
   ];
 
@@ -148,6 +149,9 @@ environment.sessionVariables = {
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/deekahy/dotfiles/nixos";
   };
+  environment.sessionVariables = {
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
+    };
 
   system.stateVersion = "unstable"; # Did you read the comment?
     hardware.bluetooth.enable = true; # enables support for Bluetooth

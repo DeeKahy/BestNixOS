@@ -27,7 +27,6 @@
     warp-terminal
     github-desktop
     jetbrains.idea-ultimate
-    protonup-qt
     unityhub
     jetbrains.rider
     davinci-resolve-studio
