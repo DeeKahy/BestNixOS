@@ -40,6 +40,7 @@
     heroic
     lutris
     vesktop
+    bottles
     
 
     # terminal tools
