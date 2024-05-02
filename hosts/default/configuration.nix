@@ -130,6 +130,13 @@ environment.sessionVariables = {
     nh
     nix-output-monitor
     nvd
+    waybar
+    (waybar.overrideAttrs (oldAttrs: {
+    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+  })
+)
+    dunst
+    libnotify
   ];
 
   programs.nh = {
