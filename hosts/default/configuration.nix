@@ -97,6 +97,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
+programs.hyprland = {
+  enable = true;
+  xwayland.enable = true;
+};
+
+
   hardware.opengl = {
     enable = true;
     driSupport = true;
