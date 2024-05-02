@@ -93,7 +93,7 @@
     dedicatedServer.openFirewall = true;
   };
 
-
+programs.gamemode.enable = true;
   programs.kdeconnect.enable = true; 
 
   nixpkgs.config.allowUnfree = true;
