@@ -141,6 +141,8 @@ environment.sessionVariables = {
     swww
     kitty
     rofi-wayland
+    dolphin
+    alacritty
   ];
 
   programs.nh = {

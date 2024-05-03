@@ -66,8 +66,6 @@
     dotnetCorePackages.sdk_6_0_1xx
     ffmpeg
     lazygit
-    dolphin
-    alacritty
 
 
 # fun
