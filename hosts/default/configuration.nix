@@ -56,7 +56,7 @@
   services.xserver.enable = true;
 
 # # Enable the KDE Plasma Desktop Environment.
-#   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
 #   services.displayManager.autoLogin.enable = true;
 #   services.displayManager.autoLogin.user = "deekahy";
 #
