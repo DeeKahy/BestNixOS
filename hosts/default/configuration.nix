@@ -57,11 +57,11 @@
 
 # # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-#   services.displayManager.autoLogin.enable = true;
-#   services.displayManager.autoLogin.user = "deekahy";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "deekahy";
 #
-#   services.xserver.desktopManager.plasma5.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
 
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -98,14 +98,14 @@ programs.gamemode.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
-programs.hyprland = {
-  enable = true;
-  xwayland.enable = true;
-};
+# programs.hyprland = {
+#   enable = true;
+#   xwayland.enable = true;
+# };
 environment.sessionVariables = {
-  WARP_ENABLE_WAYLAND = 1;
-  WLR_NO_HARDWARE_CURSORS = "1";
-  NIXOS_OZONE_WL = "1";
+  # WARP_ENABLE_WAYLAND = 1;
+  # WLR_NO_HARDWARE_CURSORS = "1";
+  # NIXOS_OZONE_WL = "1";
 };
 
   hardware.opengl = {
@@ -132,18 +132,18 @@ environment.sessionVariables = {
     nix-output-monitor
     nvd
     protonup
-    waybar
-    (waybar.overrideAttrs (oldAttrs: {
-    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-  })
-)
-    dunst
-    libnotify
-    swww
+#     waybar
+#     (waybar.overrideAttrs (oldAttrs: {
+#     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+#   })
+# )
+#     dunst
+    # libnotify
+    # swww
     kitty
     # rofi-wayland
-    wofi
-    dolphin
+    # wofi
+    # dolphin
     alacritty
   ];
 
@@ -155,7 +155,6 @@ environment.sessionVariables = {
   };
   environment.sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
-      RUST_BACKTRACE=1;
     };
 
   system.stateVersion = "unstable"; # Did you read the comment?
