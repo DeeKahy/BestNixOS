@@ -1,6 +1,15 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
+  nix.settings.experimental-features = "nix-command flakes";
+  #import shit
+  imports =
+    [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
+    ];
+
+# my user
   users.users.deekahy = {
     isNormalUser = true;
     description = "DeeKahy";
@@ -18,12 +27,6 @@
     };
   };
 
-  nix.settings.experimental-features = "nix-command flakes";
-  imports =
-    [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
 
 # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -91,9 +94,11 @@
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+    gamescopeSession.enable = true;
   };
 
 programs.gamemode.enable = true;
+
   programs.kdeconnect.enable = true; 
 
   nixpkgs.config.allowUnfree = true;
@@ -141,11 +146,11 @@ environment.sessionVariables = {
 #     dunst
     # libnotify
     # swww
-    kitty
+    # kitty
     # rofi-wayland
     # wofi
     # dolphin
-    alacritty
+    # alacritty
   ];
 
   programs.nh = {
