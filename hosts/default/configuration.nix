@@ -141,7 +141,7 @@ environment.sessionVariables = {
     swww
     kitty
     # rofi-wayland
-    rofi
+    wofi
     dolphin
     alacritty
   ];
