@@ -55,13 +55,13 @@
 # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-# Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "deekahy";
-
-  services.xserver.desktopManager.plasma5.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
+# # Enable the KDE Plasma Desktop Environment.
+#   services.displayManager.sddm.enable = true;
+#   services.displayManager.autoLogin.enable = true;
+#   services.displayManager.autoLogin.user = "deekahy";
+#
+#   services.xserver.desktopManager.plasma5.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -98,12 +98,12 @@ programs.gamemode.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
-# programs.hyprland = {
-#   enable = true;
-#   xwayland.enable = true;
-# };
+programs.hyprland = {
+  enable = true;
+  xwayland.enable = true;
+};
 environment.sessionVariables = {
-  # WLR_NO_HARDWARE_CURSORS = "1";
+  WLR_NO_HARDWARE_CURSORS = "1";
   NIXOS_OZONE_WL = "1";
 };
 
@@ -131,16 +131,16 @@ environment.sessionVariables = {
     nix-output-monitor
     nvd
     protonup
-#     waybar
-#     (waybar.overrideAttrs (oldAttrs: {
-#     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-#   })
-# )
-    # dunst
-    # libnotify
-    # swww
-    # kitty
-    # rofi-wayland
+    waybar
+    (waybar.overrideAttrs (oldAttrs: {
+    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+  })
+)
+    dunst
+    libnotify
+    swww
+    kitty
+    rofi-wayland
   ];
 
   programs.nh = {
