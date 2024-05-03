@@ -132,6 +132,7 @@ environment.sessionVariables = {
     nix-output-monitor
     nvd
     protonup
+
 #     waybar
 #     (waybar.overrideAttrs (oldAttrs: {
 #     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
