@@ -67,6 +67,7 @@
     ffmpeg
     lazygit
     dolphin
+    alacritty
 
 
 # fun
