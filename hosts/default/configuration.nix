@@ -137,6 +137,7 @@ environment.sessionVariables = {
     nix-output-monitor
     nvd
     protonup
+    mangohud
 
 #     waybar
 #     (waybar.overrideAttrs (oldAttrs: {
