@@ -153,6 +153,7 @@ environment.sessionVariables = {
   };
   environment.sessionVariables = {
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
+      WARP_ENABLE_WAYLAND = "1";
     };
 
   system.stateVersion = "unstable"; # Did you read the comment?
