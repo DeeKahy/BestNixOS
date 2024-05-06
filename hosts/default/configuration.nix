@@ -60,14 +60,6 @@
 # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-# # # Enable the KDE Plasma Desktop Environment.
-#   services.displayManager.sddm.enable = true;
-#   services.displayManager.autoLogin.enable = true;
-#   services.displayManager.autoLogin.user = "deekahy";
-#
-#   services.xserver.desktopManager.plasma5.enable = true;
-#   services.xserver.displayManager.defaultSession = "plasma";
-#
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
@@ -105,15 +97,6 @@ programs.gamemode.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
-# programs.hyprland = {
-#   enable = true;
-#   xwayland.enable = true;
-# };
-environment.sessionVariables = {
-  # WARP_ENABLE_WAYLAND = 1;
-  # WLR_NO_HARDWARE_CURSORS = "1";
-  # NIXOS_OZONE_WL = "1";
-};
 
   hardware.opengl = {
     enable = true;
