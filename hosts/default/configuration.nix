@@ -7,8 +7,8 @@
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ./kde.nix
-    # ./hyprland.nix
+    # ./kde.nix
+    ./hyprland.nix
     ];
 
 # my user
@@ -123,20 +123,6 @@ programs.gamemode.enable = true;
     nvd
     protonup
     mangohud
-
-#     waybar
-#     (waybar.overrideAttrs (oldAttrs: {
-#     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-#   })
-# )
-#     dunst
-    # libnotify
-    # swww
-    # kitty
-    # rofi-wayland
-    # wofi
-    # dolphin
-    # alacritty
   ];
 
   programs.nh = {

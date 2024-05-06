@@ -13,7 +13,7 @@ environment.sessionVariables = {
   NIXOS_OZONE_WL = "1";
 };
 
-  environment.systemPackages += with pkgs; [
+  environment.systemPackages = with pkgs; [
     waybar
     (waybar.overrideAttrs (oldAttrs: {
     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
