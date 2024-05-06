@@ -7,8 +7,7 @@
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    # ./kde.nix
-    ./hyprland.nix
+    ./kde.nix
     ];
 
 # my user
@@ -125,30 +124,7 @@ programs.gamemode.enable = true;
     nvd
     protonup
     mangohud
-    waybar
-    (waybar.overrideAttrs (oldAttrs: {
-    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-  })
-)
-    dunst
-    libnotify
-    swww
-    kitty
-    rofi-wayland
-    wofi
-    dolphin
-    alacritty
   ];
-
-programs.hyprland = {
-  enable = true;
-  xwayland.enable = true;
-};
-environment.sessionVariables = {
-  WARP_ENABLE_WAYLAND = 1;
-  WLR_NO_HARDWARE_CURSORS = "1";
-  NIXOS_OZONE_WL = "1";
-};
 
   programs.nh = {
     enable = true;
