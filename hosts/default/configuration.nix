@@ -6,7 +6,9 @@
   imports =
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
+    inputs.home-manager.nixosModules.default
+    # ./kde.nix
+    # ./hyprland.nix
     ];
 
 # my user
@@ -62,10 +64,9 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "deekahy";
-#
+  
   services.xserver.desktopManager.plasma5.enable = true;
-services.xserver.displayManager.defaultSession = "plasma";
-services.xserver.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.defaultSession = "plasma";
 
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
