@@ -96,51 +96,48 @@
   };
 programs.gamemode.enable = true;
 
-  programs.kdeconnect.enable = true; 
+programs.kdeconnect.enable = true; 
 
-  nixpkgs.config.allowUnfree = true;
+nixpkgs.config.allowUnfree = true;
 
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.modesetting.enable = true;
+hardware.opengl = {
+  enable = true;
+  driSupport = true;
+  driSupport32Bit = true;
+};
+services.xserver.videoDrivers = [ "nvidia" ];
+hardware.nvidia.modesetting.enable = true;
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [];
+programs.nix-ld.enable = true;
+programs.nix-ld.libraries = with pkgs; [];
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-  ];
+fonts.packages = with pkgs; [
+  (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+];
 
-  environment.variables = {
-    JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
-  };
-  
+environment.systemPackages = with pkgs; [
+  nh
+  nix-output-monitor
+  nvd
+  protonup
+  mangohud
+];
 
-  environment.systemPackages = with pkgs; [
-    nh
-    nix-output-monitor
-    nvd
-    protonup
-    mangohud
-  ];
+programs.nh = {
+  enable = true;
+  clean.enable = true;
+  clean.extraArgs = "--keep-since 4d --keep 3";
+  flake = "/home/deekahy/dotfiles/nixos";
+};
 
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/deekahy/dotfiles/nixos";
-  };
-  environment.sessionVariables = {
-      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
-    };
+environment.sessionVariables = {
+  STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
+  JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
+};
 
-  system.stateVersion = "unstable"; # Did you read the comment?
-    hardware.bluetooth.enable = true; # enables support for Bluetooth
-    hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+system.stateVersion = "unstable"; # Did you read the comment?
+hardware.bluetooth.enable = true; # enables support for Bluetooth
+hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 }
 
