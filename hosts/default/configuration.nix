@@ -122,6 +122,7 @@ environment.systemPackages = with pkgs; [
   nvd
   protonup
   mangohud
+libsForQt5.qtstyleplugin-kvantum
 ];
 
 programs.nh = {
