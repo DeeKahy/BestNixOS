@@ -118,13 +118,37 @@ programs.gamemode.enable = true;
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
   };
   
+
   environment.systemPackages = with pkgs; [
     nh
     nix-output-monitor
     nvd
     protonup
     mangohud
+    waybar
+    (waybar.overrideAttrs (oldAttrs: {
+    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+  })
+)
+    dunst
+    libnotify
+    swww
+    kitty
+    rofi-wayland
+    wofi
+    dolphin
+    alacritty
   ];
+
+programs.hyprland = {
+  enable = true;
+  xwayland.enable = true;
+};
+environment.sessionVariables = {
+  WARP_ENABLE_WAYLAND = 1;
+  WLR_NO_HARDWARE_CURSORS = "1";
+  NIXOS_OZONE_WL = "1";
+};
 
   programs.nh = {
     enable = true;
