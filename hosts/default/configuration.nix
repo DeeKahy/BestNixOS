@@ -7,7 +7,7 @@
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    # ./kde.nix
+    ./kde.nix
     # ./hyprland.nix
     ];
 
@@ -60,14 +60,14 @@
 # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-# # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "deekahy";
-  
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.defaultSession = "plasma";
-
+# # # Enable the KDE Plasma Desktop Environment.
+#   services.displayManager.sddm.enable = true;
+#   services.displayManager.autoLogin.enable = true;
+#   services.displayManager.autoLogin.user = "deekahy";
+#
+#   services.xserver.desktopManager.plasma5.enable = true;
+#   services.xserver.displayManager.defaultSession = "plasma";
+#
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
