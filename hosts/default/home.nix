@@ -22,6 +22,7 @@
     # applications
     firefox
     kate
+    kitty
     neovim
     thunderbird
     warp-terminal
