@@ -165,6 +165,10 @@ programs = {
    starship = { enable = true;
        settings = {
          add_newline = true;
+         username = {
+           style_user = "bright-white bold";
+           style_root = "bright-red bold";
+         };
          character = { 
          success_symbol = "[➜](bold green)";
          error_symbol = "[➜](bold red)";
