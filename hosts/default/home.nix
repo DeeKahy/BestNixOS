@@ -72,6 +72,7 @@
 # fun
     cmatrix
     freshfetch
+    neofetch
     nushell
     starship
     carapace
