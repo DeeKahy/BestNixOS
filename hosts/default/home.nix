@@ -22,7 +22,6 @@
     # applications
     firefox
     kate
-    kitty
     alacritty
     neovim
     thunderbird
@@ -33,7 +32,6 @@
     jetbrains.rider
     davinci-resolve-studio
     kcalc
-    tofi
 
 
     # gaming
