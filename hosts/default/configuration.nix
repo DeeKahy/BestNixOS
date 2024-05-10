@@ -122,7 +122,6 @@ environment.systemPackages = with pkgs; [
   nvd
   protonup
   mangohud
-libsForQt5.qtstyleplugin-kvantum
 ];
 
 programs.nh = {
@@ -135,6 +134,7 @@ programs.nh = {
 environment.sessionVariables = {
   STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
   JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
+  NIXOS_OZONE_WL = "1";
 };
 
 system.stateVersion = "unstable"; # Did you read the comment?
