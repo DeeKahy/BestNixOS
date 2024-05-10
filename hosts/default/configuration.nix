@@ -8,7 +8,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
     ./kde.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     ];
 
 # my user
