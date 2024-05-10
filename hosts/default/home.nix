@@ -71,6 +71,7 @@
 
 # fun
     cmatrix
+    freshfetch
     nushell
     starship
     carapace
