@@ -23,6 +23,7 @@
     firefox
     kate
     kitty
+    alacritty
     neovim
     thunderbird
     warp-terminal
