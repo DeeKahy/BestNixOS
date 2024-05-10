@@ -31,9 +31,7 @@
     unityhub
     jetbrains.rider
     davinci-resolve-studio
-    emacs
     kcalc
-    gnome.gnome-calculator
 
 
     # gaming
@@ -51,7 +49,12 @@
     wget
     eza
     bat
-    zoxide # Added zoxide
+    zoxide # very cool cd alternative
+    freshfetch # since neofetch is dead
+    neofetch 
+    nushell # An interesting bash alternative
+    starship # the prompt manager that makes it look fancy
+    carapace # Auto completion for the shell
 
 # dumb dependencies
     gcc
@@ -71,11 +74,6 @@
 
 # fun
     cmatrix
-    freshfetch
-    neofetch
-    nushell
-    starship
-    carapace
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
