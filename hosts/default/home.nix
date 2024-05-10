@@ -41,6 +41,7 @@
     vesktop
     bottles
     
+    obs-studio
 
     # terminal tools
     tree
