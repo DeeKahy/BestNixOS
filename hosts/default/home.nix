@@ -154,9 +154,10 @@ programs = {
        )
        '';
        shellAliases = {
-       # vi = "hx";
-       # vim = "hx";
+       vi = "nvim";
+       vim = "nvim";
        # nano = "hx";
+       cd = "z";
        };
    };  
    carapace.enable = true;
