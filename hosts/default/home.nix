@@ -226,18 +226,14 @@ alias zi = __zoxide_zi
    carapace.enableNushellIntegration = true;
 
    starship = { enable = true;
-       settings = {
-         add_newline = true;
-         username = {
-           style_user = "bright-white bold";
-           style_root = "bright-red bold";
-         };
-         character = { 
+     settings = {
+       add_newline = true;
+       character = { 
          success_symbol = "[➜](bold green)";
          error_symbol = "[➜](bold red)";
        };
-    };
-  };
+     };
+   };
 };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
