@@ -42,6 +42,7 @@
     bottles
     
     obs-studio
+    mpv
 
     # terminal tools
     tree
