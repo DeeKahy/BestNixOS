@@ -23,7 +23,6 @@ environment.sessionVariables = {
     libnotify
     swww
     kitty
-    rofi-wayland
     wofi
     dolphin
     alacritty
