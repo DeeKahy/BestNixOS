@@ -73,7 +73,6 @@
     dotnetCorePackages.sdk_6_0_1xx
     ffmpeg
     lazygit
-    microsoft-edge
 
 # fun
     cmatrix
