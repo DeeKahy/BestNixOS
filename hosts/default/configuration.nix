@@ -106,16 +106,16 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.modesetting.enable = true;
 
-  programs.nix-ld.libraries = with pkgs; [];
+  # programs.nix-ld.libraries = with pkgs; [];
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-  ];
+  # fonts.packages = with pkgs; [
+    # (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  # ];
 
   environment.systemPackages = with pkgs; [
     nh
       nix-output-monitor
-      nvd
+      # nvd
       protonup
       mangohud
   ];
@@ -130,7 +130,7 @@
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
-    NIXOS_OZONE_WL = "1";
+    # NIXOS_OZONE_WL = "1";
 # SDL_VIDEODRIVER = "wayland";
   };
 
