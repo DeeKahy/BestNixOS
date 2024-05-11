@@ -106,16 +106,11 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-  ];
-
   environment.systemPackages = with pkgs; [
     nh
-      nix-output-monitor
-      nvd
-      protonup
-      mangohud
+    nix-output-monitor
+    protonup
+    mangohud
   ];
 
   programs.nh = {
@@ -126,10 +121,8 @@
   };
 
   environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
+    # STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
-    NIXOS_OZONE_WL = "1";
-# SDL_VIDEODRIVER = "wayland";
   };
 
   system.stateVersion = "unstable"; # Did you read the comment?
