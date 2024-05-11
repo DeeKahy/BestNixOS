@@ -1,6 +1,20 @@
-{ config, pkgs, ... }:
-
+{ lib
+, config
+, pkgs
+, ...
+}:
+let
+  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+  nix-index-database =
+    (import flake-compat {
+      src = builtins.fetchTarball "https://github.com/nix-community/nix-index-database/archive/refs/tags/2024-03-17-030743.zip";
+    }).defaultNix;
+in
 {
+  imports = [
+    ./firefox.nix
+    # nix-index-database.hmModules.nix-index
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "deekahy";
