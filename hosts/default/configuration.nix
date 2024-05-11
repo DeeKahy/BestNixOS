@@ -79,11 +79,11 @@
     pulse.enable = true;
   };
 
-  environment.interactiveShellInit = ''
-    eval "$(zoxide init bash --cmd z)"
-    alias cd="z"
-    alias ls="eza"
-    '';
+  # environment.interactiveShellInit = ''
+  #   eval "$(zoxide init bash --cmd z)"
+  #   alias cd="z"
+  #   alias ls="eza"
+  #   '';
 
 
   programs.steam = {
