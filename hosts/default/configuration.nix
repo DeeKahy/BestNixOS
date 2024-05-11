@@ -7,7 +7,7 @@
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ./kde.nix
+    # ./kde.nix
     ];
 
 # my user
@@ -59,6 +59,11 @@
 # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.wayland.enable = true;
+
+  services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.defaultSession = "plasma";
+
 
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -123,7 +128,6 @@
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
-    NIXOS_OZONE_WL = "1";
   };
 
   system.stateVersion = "unstable"; # Did you read the comment?
