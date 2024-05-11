@@ -119,6 +119,8 @@
       # nvd
       protonup
       mangohud
+
+pywal
   ];
 
   programs.nh = {
