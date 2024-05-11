@@ -1,22 +1,11 @@
 { config, pkgs, ... }:
 
-let
-  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-  nix-index-database =
-    (import flake-compat {
-      src = builtins.fetchTarball "https://github.com/nix-community/nix-index-database/archive/refs/tags/2024-03-17-030743.zip";
-    }).defaultNix;
-in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "deekahy";
   home.homeDirectory = "/home/deekahy";
 
-  imports =
-    [ # Include the results of the hardware scan.
-    ./firefox.nix
-    ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
