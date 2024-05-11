@@ -104,7 +104,9 @@
     driSupport32Bit = true;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.modesetting.enable = true;
 
+  programs.nix-ld.libraries = with pkgs; [];
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
@@ -112,9 +114,9 @@
 
   environment.systemPackages = with pkgs; [
     nh
-    nix-output-monitor
-    nvd
-    protonup
+      nix-output-monitor
+      nvd
+      protonup
       mangohud
   ];
 
