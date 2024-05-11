@@ -8,7 +8,6 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
     ./kde.nix
-    # ./hyprland.nix
     ];
 
 # my user
@@ -61,9 +60,6 @@
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
 
-# programs.hyprland.enable = true;
-# programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
@@ -82,11 +78,11 @@
     pulse.enable = true;
   };
 
-  environment.interactiveShellInit = ''
-    eval "$(zoxide init bash --cmd z)"
-    alias cd="z"
-    alias ls="eza"
-    '';
+  # environment.interactiveShellInit = ''
+  #   eval "$(zoxide init bash --cmd z)"
+  #   alias cd="z"
+  #   alias ls="eza"
+  #   '';
 
 
   programs.steam = {
@@ -95,52 +91,52 @@
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
-programs.gamemode.enable = true;
+  programs.gamemode.enable = true;
 
-programs.kdeconnect.enable = true; 
+  programs.kdeconnect.enable = true; 
 
-nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
 
-hardware.opengl = {
-  enable = true;
-  driSupport = true;
-  driSupport32Bit = true;
-};
-services.xserver.videoDrivers = [ "nvidia" ];
-hardware.nvidia.modesetting.enable = true;
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.modesetting.enable = true;
 
-programs.nix-ld.enable = true;
-programs.nix-ld.libraries = with pkgs; [];
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [];
 
-fonts.packages = with pkgs; [
-  (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-];
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
 
-environment.systemPackages = with pkgs; [
-  nh
-  nix-output-monitor
-  nvd
-  protonup
-  mangohud
-];
+  environment.systemPackages = with pkgs; [
+    nh
+      nix-output-monitor
+      nvd
+      protonup
+      mangohud
+  ];
 
-programs.nh = {
-  enable = true;
-  clean.enable = true;
-  clean.extraArgs = "--keep-since 4d --keep 3";
-  flake = "/home/deekahy/dotfiles/nixos";
-};
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/deekahy/dotfiles/nixos";
+  };
 
-environment.sessionVariables = {
-  STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
-  JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
-  NIXOS_OZONE_WL = "1";
-  # SDL_VIDEODRIVER = "wayland";
-};
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
+    JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
+    NIXOS_OZONE_WL = "1";
+# SDL_VIDEODRIVER = "wayland";
+  };
 
-system.stateVersion = "unstable"; # Did you read the comment?
-hardware.bluetooth.enable = true; # enables support for Bluetooth
-hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  system.stateVersion = "unstable"; # Did you read the comment?
+    hardware.bluetooth.enable = true; # enables support for Bluetooth
+    hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 }
 
