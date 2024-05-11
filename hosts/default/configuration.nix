@@ -61,7 +61,6 @@
   services.displayManager.sddm.enable = true;
 
   services.xserver.desktopManager.plasma6.enable = true;
-
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
@@ -80,11 +79,11 @@
     pulse.enable = true;
   };
 
-  # environment.interactiveShellInit = ''
-  #   eval "$(zoxide init bash --cmd z)"
-  #   alias cd="z"
-  #   alias ls="eza"
-  #   '';
+  environment.interactiveShellInit = ''
+    eval "$(zoxide init bash --cmd z)"
+    alias cd="z"
+    alias ls="eza"
+    '';
 
 
   programs.steam = {
