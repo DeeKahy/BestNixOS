@@ -120,7 +120,7 @@
       # nvd
       protonup
       mangohud
-
+libsForQt5.qtstyleplugin-kvantum
 pywal
   ];
 
