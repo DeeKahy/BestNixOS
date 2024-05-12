@@ -33,6 +33,7 @@
     jetbrains.rider
     davinci-resolve-studio
     kcalc
+    krita
     filezilla
 
     # gaming
