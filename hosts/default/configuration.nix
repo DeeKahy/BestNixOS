@@ -18,7 +18,6 @@
     packages = with pkgs; [
     ];
 
-    password = "sunsil";
   };
 
   home-manager = {
@@ -78,13 +77,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  # environment.interactiveShellInit = ''
-  #   eval "$(zoxide init bash --cmd z)"
-  #   alias cd="z"
-  #   alias ls="eza"
-  #   '';
-
 
   programs.steam = {
     enable = true;
