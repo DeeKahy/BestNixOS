@@ -33,7 +33,7 @@
     jetbrains.rider
     davinci-resolve-studio
     kcalc
-
+krita
     # gaming
     steam
     heroic
@@ -43,6 +43,7 @@
     
     obs-studio
     mpv
+
 
     # terminal tools
     tree
