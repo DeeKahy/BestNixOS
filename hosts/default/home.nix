@@ -33,6 +33,7 @@
     jetbrains.rider
     davinci-resolve-studio
     kcalc
+    sunshine
 
 
     # gaming
