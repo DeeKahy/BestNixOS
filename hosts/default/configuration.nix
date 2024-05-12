@@ -96,9 +96,9 @@
     driSupport = true;
     driSupport32Bit = true;
   };
- hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
-  services.xserver.videoDrivers = [ "nvidia" ];
-# services.xserver.videoDrivers = [ "nouveau" ];
+ # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  # services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "nvd" ];
 
   hardware.nvidia.modesetting.enable = true;
 
@@ -115,6 +115,7 @@
       mangohud
       libsForQt5.qtstyleplugin-kvantum
     # (pkgs.nerdfonts.override { fonts = [ "jetbrains-mono" ]; })
+    nvd
   ];
 
   programs.nh = {
