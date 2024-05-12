@@ -114,7 +114,6 @@
       protonup
       mangohud
       libsForQt5.qtstyleplugin-kvantum
-      pywal
     # (pkgs.nerdfonts.override { fonts = [ "jetbrains-mono" ]; })
   ];
 
