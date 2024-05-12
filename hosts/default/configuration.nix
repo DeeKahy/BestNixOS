@@ -117,11 +117,11 @@
   environment.systemPackages = with pkgs; [
     nh
       nix-output-monitor
-      # nvd
       protonup
       mangohud
-libsForQt5.qtstyleplugin-kvantum
-pywal
+      libsForQt5.qtstyleplugin-kvantum
+      pywal
+    # (pkgs.nerdfonts.override { fonts = [ "jetbrains-mono" ]; })
   ];
 
   programs.nh = {
