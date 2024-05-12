@@ -97,7 +97,7 @@
     driSupport32Bit = true;
   };
   
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "nouveau" ];
   hardware.nvidia.modesetting.enable = true;
 
   # programs.nix-ld.libraries = with pkgs; [];
