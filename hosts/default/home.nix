@@ -33,8 +33,8 @@
     jetbrains.rider
     davinci-resolve-studio
     kcalc
-krita
-filezilla
+    filezilla
+
     # gaming
     steam
     heroic
