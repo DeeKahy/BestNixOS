@@ -34,6 +34,7 @@
     davinci-resolve-studio
     kcalc
 krita
+filezilla
     # gaming
     steam
     heroic
