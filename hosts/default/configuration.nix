@@ -69,6 +69,7 @@
   services.displayManager.sddm.enable = true;
 
   services.xserver.desktopManager.plasma6.enable = true;
+
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
@@ -139,7 +140,7 @@
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
-    # NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = "1";
 # SDL_VIDEODRIVER = "wayland";
   };
 
