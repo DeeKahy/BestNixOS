@@ -62,8 +62,8 @@
   layout = "us";
   displayManager.sessionCommands = ''
     # Set up monitors with appropriate refresh rates
-    xrandr --output DP-2 --mode 2560x1440 --rate 144
-    xrandr --output HDMI-2 --mode 1920x1080 --rate 60
+    xrandr --output DP-2 --mode 2560x1440 --rate 143.91
+    xrandr --output HDMI-2 --mode 1920x1080 --rate 60.00
   '';
 };
   services.displayManager.sddm.enable = true;
