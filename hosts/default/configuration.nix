@@ -56,7 +56,16 @@
   };
 
 # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
+  services.xserver = {
+  enable = true;
+  layout = "us";
+  displayManager.sessionCommands = ''
+    # Set up monitors with appropriate refresh rates
+    xrandr --output DP-2 --mode 2560x1440 --rate 144
+    xrandr --output HDMI-2 --mode 1920x1080 --rate 60
+  '';
+};
   services.displayManager.sddm.enable = true;
 
   services.xserver.desktopManager.plasma6.enable = true;
