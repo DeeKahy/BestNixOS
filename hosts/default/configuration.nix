@@ -117,6 +117,7 @@
     # (pkgs.nerdfonts.override { fonts = [ "jetbrains-mono" ]; })
     # nvd
     xorg.xrandr
+    arandr
   ];
 
   programs.nh = {
