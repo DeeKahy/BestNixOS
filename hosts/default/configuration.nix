@@ -116,6 +116,7 @@
       libsForQt5.qtstyleplugin-kvantum
     # (pkgs.nerdfonts.override { fonts = [ "jetbrains-mono" ]; })
     # nvd
+    xorg.xrandr
   ];
 
   programs.nh = {
