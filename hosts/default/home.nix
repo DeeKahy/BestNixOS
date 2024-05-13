@@ -35,7 +35,6 @@
     kcalc
     krita
     filezilla
-
     # gaming
     steam
     heroic
