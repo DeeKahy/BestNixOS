@@ -71,7 +71,7 @@
     maven
     nodejs
     cargo
-    gnutar # i dont remember why i needed this 
+    # gnutar # i dont remember why i needed this 
     dotnetCorePackages.sdk_6_0_1xx
     ffmpeg
     lazygit
