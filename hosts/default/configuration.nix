@@ -7,7 +7,7 @@
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ./nvidia.nix
+    # ./nvidia.nix
    # ./kde.nix
     ];
 
@@ -57,20 +57,22 @@
   };
 
 # Enable the X11 windowing system.
-  # services.xserver.enable = true;
   services.xserver = {
   enable = true;
   layout = "us";
-  # displayManager.sessionCommands = ''
-  #   # Set up monitors with appropriate refresh rates
-  #   xrandr --output DP-2 --mode 2560x1440 --rate 143.91
-  #   xrandr --output HDMI-2 --mode 1920x1080 --rate 60.00
-  # '';
+  displayManager.sessionCommands = ''
+    # Set up monitors with appropriate refresh rates
+    xrandr --output DP-0 --mode 2560x1440 --rate 143.91
+    xrandr --output HDMI-0 --mode 1920x1080 --rate 60.00
+  '';
 };
   services.displayManager.sddm.enable = true;
 
   services.xserver.desktopManager.plasma6.enable = true;
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+  # services.xserver.videoDrivers = [ "nvd" ];
+  #
 # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
@@ -107,8 +109,6 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-  # services.xserver.videoDrivers = [ "nvidia" ];
-  # services.xserver.videoDrivers = [ "nvd" ];
 
 
   # programs.nix-ld.libraries = with pkgs; [];
