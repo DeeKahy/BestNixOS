@@ -7,6 +7,7 @@
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    ./nvidia.nix
    # ./kde.nix
     ];
 
@@ -106,11 +107,13 @@
     driSupport = true;
     driSupport32Bit = true;
   };
- hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  services.xserver.videoDrivers = [ "nvidia" ];
+   hardware.nvidia = {
+    package = pkgs.linuxPackages.nvidiaPackages.legacy_535;
+    modesetting.enable = true;
+  };
+  # services.xserver.videoDrivers = [ "nvidia" ];
   # services.xserver.videoDrivers = [ "nvd" ];
 
-  hardware.nvidia.modesetting.enable = true;
 
   # programs.nix-ld.libraries = with pkgs; [];
 
