@@ -35,7 +35,7 @@
     kcalc
     krita
     filezilla
-
+    armcord
     # gaming
     steam
     heroic
