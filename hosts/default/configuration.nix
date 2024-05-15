@@ -125,6 +125,7 @@
     libsForQt5.qtstyleplugin-kvantum
     xorg.xrandr
     arandr
+gparted
   ];
 
   # NH program configuration
