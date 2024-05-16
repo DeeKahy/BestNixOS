@@ -119,6 +119,8 @@
   # System packages
   environment.systemPackages = with pkgs; [
     nh
+    
+    grapejuice
     nix-output-monitor
     protonup
     mangohud
