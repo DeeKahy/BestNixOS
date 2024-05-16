@@ -120,6 +120,7 @@
   environment.systemPackages = with pkgs; [
     nh
     
+    waydroid
     nix-output-monitor
     protonup
     mangohud
