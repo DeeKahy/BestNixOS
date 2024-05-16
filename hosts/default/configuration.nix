@@ -118,6 +118,7 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
+    inputs.nix-software-center.packages.${system}.nix-software-center
     nh
     
     waydroid
