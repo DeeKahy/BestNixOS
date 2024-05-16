@@ -43,6 +43,7 @@
     # vesktop
     armcord
     bottles
+    element
     
     obs-studio
     mpv
