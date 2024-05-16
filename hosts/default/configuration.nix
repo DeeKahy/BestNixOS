@@ -128,7 +128,6 @@
     arandr
 gparted
   ];
-
   # NH program configuration
   programs.nh = {
     enable = true;
@@ -137,6 +136,7 @@ gparted
     flake = "/home/deekahy/dotfiles/nixos";
   };
 
+virtualisation.waydroid.enable = true;
   # Session variables
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
