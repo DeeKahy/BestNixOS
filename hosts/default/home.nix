@@ -40,7 +40,8 @@
     steam
     heroic
     lutris
-    vesktop
+    # vesktop
+    armcord
     bottles
     
     obs-studio
