@@ -187,8 +187,8 @@
     mangohud
     libsForQt5.qtstyleplugin-kvantum
     xorg.xrandr
-    arandr
 gparted
+    jellyfin-media-player
   ];
   # NH program configuration
   programs.nh = {
