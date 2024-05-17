@@ -31,7 +31,70 @@
     # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
+
     # '')
+
+    # applications
+    firefox
+    kate
+    alacritty
+    neovim
+    thunderbird
+    warp-terminal
+    github-desktop
+    jetbrains.idea-ultimate
+    unityhub
+    jetbrains.rider
+    davinci-resolve-studio
+    kcalc
+    krita
+    filezilla
+    
+    # gaming
+    steam
+    heroic
+    lutris
+    # vesktop
+    armcord
+    bottles
+    element
+    
+    obs-studio
+    mpv
+
+
+    # terminal tools
+    tree
+    git
+    ripgrep
+    wget
+    eza
+    bat
+    zoxide # very cool cd alternative
+    freshfetch # since neofetch is dead
+    neofetch 
+    nushell # An interesting bash alternative
+    starship # the prompt manager that makes it look fancy
+    carapace # Auto completion for the shell
+
+# dumb dependencies
+    gcc
+    xsel
+    openjdk21
+    maven
+    nodejs
+    cargo
+    # gnutar # i dont remember why i needed this 
+    dotnetCorePackages.sdk_6_0_1xx
+    ffmpeg
+    lazygit
+
+# fun
+    cmatrix
+    handbrake
+    telegram-desktop
+    gimp
+    waydroid
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
