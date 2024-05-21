@@ -3,7 +3,7 @@
 {
   # Enable experimental Nix features
   nix.settings.experimental-features = "nix-command flakes";
-
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   # Import necessary configurations
   imports = [
     ./hardware-configuration.nix          # Include hardware configuration
