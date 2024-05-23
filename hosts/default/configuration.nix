@@ -135,6 +135,8 @@ hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
 gparted
 nvidia-container-toolkit
   ];
+  virtualisation.docker.enable = true;
+
   # NH program configuration
   programs.nh = {
     enable = true;
