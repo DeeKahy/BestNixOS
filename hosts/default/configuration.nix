@@ -68,7 +68,7 @@
   # Display manager configuration
   services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma6.enable = true;
-
+hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
   # Video driver configuration
   services.xserver.videoDrivers = [ "nvidia" ];
   # services.xserver.videoDrivers = [ "nvd" ];  # Alternative driver (commented out)
@@ -126,7 +126,6 @@
     libsForQt5.qtstyleplugin-kvantum
     xorg.xrandr
 gparted
-    jellyfin-media-player
   ];
   # NH program configuration
   programs.nh = {
