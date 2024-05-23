@@ -95,7 +95,6 @@
     telegram-desktop
     gimp
     waydroid
-    docker
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
