@@ -134,7 +134,7 @@ hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
     xorg.xrandr
 gparted
 nvidia-container-toolkit
-docker
+podman
   ];
   # NH program configuration
   programs.nh = {
