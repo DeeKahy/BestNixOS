@@ -133,6 +133,7 @@ hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
     libsForQt5.qtstyleplugin-kvantum
     xorg.xrandr
 gparted
+nvidia-container-toolkit
   ];
 virtualisation.docker.enable = true;
   # NH program configuration
