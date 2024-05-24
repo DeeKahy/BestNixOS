@@ -58,7 +58,7 @@
     armcord
     bottles
     element
-    
+    prismlauncher
     obs-studio
     mpv
 
