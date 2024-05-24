@@ -55,7 +55,7 @@
     heroic
     lutris
     # vesktop
-    armcord
+    # armcord
     vesktop
     bottles
     element
