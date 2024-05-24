@@ -66,6 +66,7 @@
     # terminal tools
     tree
     git
+    gh
     ripgrep
     wget
     eza
