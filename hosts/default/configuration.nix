@@ -10,7 +10,7 @@
     # ./nvidia.nix                         # NVIDIA configuration (commented out)
     # ./kde.nix                            # KDE configuration (commented out)
   ];
-  stylix.image = ./yes.png;
+  # stylix.image = ./yes.png;
   # User configuration
   users.users.deekahy = {
     isNormalUser = true;
