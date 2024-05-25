@@ -55,7 +55,7 @@
     heroic
     lutris
     # vesktop
-    # armcord
+    armcord
     vesktop
     bottles
     element
@@ -74,6 +74,7 @@
     bat
     zoxide # very cool cd alternative
     freshfetch # since neofetch is dead
+    fastfetch
     neofetch 
     nushell # An interesting bash alternative
     starship # the prompt manager that makes it look fancy
