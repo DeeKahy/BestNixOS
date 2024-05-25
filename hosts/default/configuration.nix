@@ -16,7 +16,10 @@
     isNormalUser = true;
     description = "DeeKahy";
     extraGroups = [ "networkmanager" "wheel" "disk" ];
-    packages = with pkgs; [ ];
+    shell = pkgs.nushell;
+    packages = with pkgs; [
+
+    ];
   };
 
   # Home Manager configuration
