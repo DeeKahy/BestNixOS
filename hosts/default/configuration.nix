@@ -129,6 +129,7 @@ in
     syncthing
     pitivi
     flowblade
+    davinci-resolve
     
     nix-output-monitor
     protonup
