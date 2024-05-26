@@ -68,11 +68,6 @@ in
   services.xserver = {
     enable = true;
     layout = "us";
-    displayManager.sessionCommands = ''
-      # Set up monitors with appropriate refresh rates
-      xrandr --output DP-0 --mode 2560x1440 --rate 143.91
-      xrandr --output HDMI-0 --mode 1920x1080 --rate 60.00
-    '';
   };
 
   # Display manager configuration
