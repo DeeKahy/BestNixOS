@@ -72,9 +72,10 @@ in
 
   # Display manager configuration
   services.displayManager.sddm.enable = true;
-  # services.desktopManager.cosmic.enable = true;
-  # services.displayManager.cosmic-greeter.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  # services.displayManager.gdm.enable = true;
+  services.desktopManager.cosmic.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
+  # services.xserver.desktopManager.plasma6.enable = true;
 
 hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
