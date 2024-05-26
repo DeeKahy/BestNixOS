@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stablenixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     # stylix.url = "github:danth/stylix";
 

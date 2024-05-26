@@ -42,7 +42,6 @@
     thunderbird
     warp-terminal
     github-desktop
-    jetbrains.idea-ultimate
     unityhub
     jetbrains.rider
     davinci-resolve-studio

@@ -1,5 +1,11 @@
 { config, pkgs, lib, inputs, ... }:
-
+let
+  # Reference the stable nixpkgs
+  stablePkgs = import inputs.stablenixpkgs {
+    system = pkgs.system;
+    config = { allowUnfree = true; };  # If you use any unfree packages
+  };
+in
 {
   # Enable experimental Nix features
   nix.settings.experimental-features = "nix-command flakes";
@@ -17,8 +23,9 @@
     description = "DeeKahy";
     extraGroups = [ "networkmanager" "wheel" "disk" ];
     shell = pkgs.nushell;
-    packages = with pkgs; [
-
+    packages = with stablePkgs; [
+  
+    jetbrains.idea-ultimate
     ];
   };
 
