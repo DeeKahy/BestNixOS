@@ -125,11 +125,6 @@ in
     inputs.nix-software-center.packages.${system}.nix-software-center
     nh
 
-    obsidian
-    syncthing
-    pitivi
-    flowblade
-    davinci-resolve
     
     nix-output-monitor
     protonup
