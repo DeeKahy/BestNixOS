@@ -71,24 +71,13 @@ in
   };
 
   # Display manager configuration
-  services.xserver.displayManager.gdm.enable = true;
-  # services.displayManager.gdm.enable = true;
-  services.desktopManager.cosmic.enable = true;
-  services.displayManager.cosmic-greeter.enable = true;
-  # services.xserver.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
 
-hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
-# hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-#   version = "555.42.02";
-#   sha256_64bit = "sha256-k7cI3ZDlKp4mT46jMkLaIrc2YUx1lh1wj/J4SVSHWyk=";
-#   sha256_aarch64 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA=";
-#   openSha256 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA=";
-#   settingsSha256 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA="; 
-#   persistencedSha256 = lib.fakeSha256;
-# };
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
   services.xserver.videoDrivers = [ "nvidia" ];
-  # services.xserver.videoDrivers = [ "nvd" ];  # Alternative driver (commented out)
-    hardware.nvidia.modesetting.enable = true;
+
+  hardware.nvidia.modesetting.enable = true;
   # X11 keymap configuration
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
@@ -139,7 +128,7 @@ hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
     nix-output-monitor
     protonup
     mangohud
-gparted
+    gparted
   ];
   # NH program configuration
   programs.nh = {
