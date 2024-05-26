@@ -72,7 +72,10 @@ in
 
   # Display manager configuration
   services.displayManager.sddm.enable = true;
+  # services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
   services.xserver.desktopManager.plasma6.enable = true;
+
 hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
 #   version = "555.42.02";
@@ -150,7 +153,7 @@ virtualisation.waydroid.enable = true;
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
-    NIXOS_OZONE_WL = "1";
+    # NIXOS_OZONE_WL = "1";
   };
 
   # System state version
