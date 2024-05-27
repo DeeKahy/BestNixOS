@@ -48,6 +48,7 @@
     kcalc
     krita
     filezilla
+    vscode
     
     # gaming
     steam
