@@ -119,7 +119,6 @@ in
     driSupport = true;
     driSupport32Bit = true;
   };
-
   # System packages
   environment.systemPackages = with pkgs; [
     inputs.nix-software-center.packages.${system}.nix-software-center
@@ -139,7 +138,6 @@ in
     flake = "/home/deekahy/dotfiles/nixos";
   };
 
-virtualisation.waydroid.enable = true;
   # Session variables
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
