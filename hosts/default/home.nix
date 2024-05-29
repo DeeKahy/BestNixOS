@@ -93,6 +93,7 @@
     ffmpeg
     lazygit
     ungoogled-chromium
+    sidequest
 # fun
     cmatrix
     handbrake
