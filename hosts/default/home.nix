@@ -92,7 +92,7 @@
     dotnetCorePackages.sdk_6_0_1xx
     ffmpeg
     lazygit
-
+discord
 # fun
     cmatrix
     handbrake
