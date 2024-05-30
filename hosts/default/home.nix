@@ -95,6 +95,7 @@
     ungoogled-chromium
     sidequest
     cpu-x
+    boxbuddy
 # fun
     cmatrix
     handbrake
