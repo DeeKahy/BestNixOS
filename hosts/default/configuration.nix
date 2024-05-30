@@ -44,7 +44,7 @@ programs.nix-ld.libraries = with pkgs; [
    gcc
    zlib
    gcc.libc
-
+icu
 ];
 
   # Bootloader configuration
