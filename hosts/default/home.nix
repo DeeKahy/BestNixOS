@@ -98,6 +98,7 @@
     boxbuddy
     patchelf
     distrobox
+    podman
 # fun
     cmatrix
     handbrake
