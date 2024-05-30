@@ -94,6 +94,7 @@
     lazygit
     ungoogled-chromium
     sidequest
+    cpu-x
 # fun
     cmatrix
     handbrake
