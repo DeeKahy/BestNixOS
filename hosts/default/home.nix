@@ -96,6 +96,7 @@
     sidequest
     cpu-x
     boxbuddy
+    patchelf
 # fun
     cmatrix
     handbrake
