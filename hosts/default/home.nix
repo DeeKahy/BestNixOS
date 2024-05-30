@@ -97,6 +97,7 @@
     cpu-x
     boxbuddy
     patchelf
+    distrobox
 # fun
     cmatrix
     handbrake
