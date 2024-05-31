@@ -100,6 +100,7 @@
     distrobox
     podman
     nextcloud-client
+    blueman
 
 # fun
     cmatrix
