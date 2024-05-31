@@ -99,6 +99,7 @@
     patchelf
     distrobox
     podman
+    nextcloud-client
 
 # fun
     cmatrix
