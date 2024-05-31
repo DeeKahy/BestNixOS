@@ -13,8 +13,6 @@ in
   imports = [
     ./hardware-configuration.nix          # Include hardware configuration
     inputs.home-manager.nixosModules.default # Home Manager module
-    # ./nvidia.nix                         # NVIDIA configuration (commented out)
-    # ./kde.nix                            # KDE configuration (commented out)
   ];
   # stylix.image = ./yes.png;
   # User configuration
@@ -81,8 +79,12 @@ icu
   };
 
   # Display manager configuration
-  services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma6.enable = true;
+
+  services.xserver.displayManager.gdm.enable = true;
+  services.desktopManager.cosmic.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
   services.xserver.videoDrivers = [ "nvidia" ];
