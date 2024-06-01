@@ -100,6 +100,7 @@
     distrobox
     podman
     blueman
+   pwgen
 
 # fun
     cmatrix
