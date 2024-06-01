@@ -152,6 +152,7 @@ nixpkgs.config.qt5 = {
       name = "Utterly Nord Plasma";
     };
 };
+environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
   # NH program configuration
   programs.nh = {
     enable = true;
