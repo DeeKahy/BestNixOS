@@ -101,6 +101,7 @@
     podman
     blueman
    pwgen
+   libreoffice-qt6-still
 
 # fun
     cmatrix
