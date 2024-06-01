@@ -1,22 +1,20 @@
 { config, pkgs, lib, inputs, ... }:
 let
-  # Reference the stable nixpkgs
   stablePkgs = import inputs.stablenixpkgs {
     system = pkgs.system;
-    config = { allowUnfree = true; };  # If you use any unfree packages
+    config = { allowUnfree = true; };
   };
 in
 {
   # Enable experimental Nix features
   nix.settings.experimental-features = "nix-command flakes";
+
   # Import necessary configurations
   imports = [
-    ./hardware-configuration.nix          # Include hardware configuration
-    inputs.home-manager.nixosModules.default # Home Manager module
-    # ./nvidia.nix                         # NVIDIA configuration (commented out)
-    # ./kde.nix                            # KDE configuration (commented out)
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
   ];
-  # stylix.image = ./yes.png;
+
   # User configuration
   users.users.deekahy = {
     isNormalUser = true;
@@ -24,8 +22,7 @@ in
     extraGroups = [ "networkmanager" "wheel" "disk" ];
     shell = pkgs.nushell;
     packages = with stablePkgs; [
-  
-    jetbrains.idea-ultimate
+      jetbrains.idea-ultimate
     ];
   };
 
@@ -36,16 +33,15 @@ in
       "deekahy" = import ./home.nix;
     };
   };
-programs.nix-ld.enable = true;
-programs.nix-ld.libraries = with pkgs; [
-  # Add any missing dynamic libraries for unpackaged 
-  # programs here, NOT in environment.systemPackages
-   glibc
-   gcc
-   zlib
-   gcc.libc
-icu
-];
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    glibc
+    gcc
+    zlib
+    gcc.libc
+    icu
+  ];
 
   # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
@@ -88,27 +84,23 @@ icu
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia.modesetting.enable = true;
-  # X11 keymap configuration
-  services.xserver.xkb.layout = "us";
-  services.xserver.xkb.variant = "";
 
   # Enable CUPS for printing
   services.printing.enable = true;
 
   # Enable sound with PipeWire
   sound.enable = true;
-  services = {
-    pipewire = {
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    pulse.enable = true;
+    alsa = {
       enable = true;
-      audio.enable = true;
-      pulse.enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      jack.enable = true;
+      support32Bit = true;
     };
+    jack.enable = true;
   };
+
   # Enable Steam
   programs.steam = {
     enable = true;
@@ -132,27 +124,29 @@ icu
     driSupport = true;
     driSupport32Bit = true;
   };
+
   # System packages
   environment.systemPackages = with pkgs; [
     nh
-
-    
     nix-output-monitor
     protonup
     mangohud
     gparted
-      libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
-];
-nixpkgs.config.qt5 = {
-  enable = true;
-  platformTheme = "qt5ct"; 
+  ];
+
+  # Qt5 theme configuration
+  nixpkgs.config.qt5 = {
+    enable = true;
+    platformTheme = "qt5ct";
     style = {
       package = pkgs.utterly-nord-plasma;
       name = "Utterly Nord Plasma";
     };
-};
-environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
+  };
+  environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
+
   # NH program configuration
   programs.nh = {
     enable = true;
@@ -165,11 +159,10 @@ environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
     JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
-    # NIXOS_OZONE_WL = "1";
   };
 
   # System state version
-  system.stateVersion = "unstable"; # Did you read the comment?
+  system.stateVersion = "unstable";
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
