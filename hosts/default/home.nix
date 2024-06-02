@@ -37,10 +37,8 @@
     # applications
     firefox
     kate
-    alacritty
     neovim
     thunderbird
-    warp-terminal
     github-desktop
     unityhub
     jetbrains.rider
@@ -54,6 +52,7 @@
     steam
     heroic
     lutris
+
     # vesktop
     armcord
     vesktop
@@ -73,7 +72,6 @@
     eza
     bat
     zoxide # very cool cd alternative
-    freshfetch # since neofetch is dead
     fastfetch
     neofetch 
     nushell # An interesting bash alternative
@@ -88,11 +86,10 @@
     maven
     nodejs
     cargo
-    # gnutar # i dont remember why i needed this 
+
     dotnetCorePackages.sdk_6_0_1xx
     ffmpeg
     lazygit
-    ungoogled-chromium
     sidequest
     cpu-x
     boxbuddy
@@ -100,7 +97,6 @@
     distrobox
     podman
     blueman
-   pwgen
    libreoffice-qt6-still
 
 # fun
@@ -108,7 +104,6 @@
     handbrake
     telegram-desktop
     gimp
-    waydroid
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
