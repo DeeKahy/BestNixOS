@@ -142,7 +142,7 @@ in
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/deekahy/dotfiles/nixos";
   };
-
+programs.adb.enable = true;
   # Session variables
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
