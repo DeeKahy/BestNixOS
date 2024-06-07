@@ -54,7 +54,6 @@
     lutris
 
     # vesktop
-    armcord
     vesktop
     bottles
     element
