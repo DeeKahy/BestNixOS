@@ -56,6 +56,7 @@
     # vesktop
     vesktop
     bottles
+    converseen
     element
     prismlauncher
     obs-studio
