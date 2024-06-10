@@ -35,6 +35,7 @@
     # '')
 
     # applications
+    armcord
     firefox
     kate
     neovim
