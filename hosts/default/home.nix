@@ -30,7 +30,7 @@
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
+    #   eco "Hello, ${config.home.username}!"
 
     # '')
 
@@ -55,7 +55,6 @@
 
     # vesktop
     vesktop
-    armcord
     bottles
     converseen
     element
