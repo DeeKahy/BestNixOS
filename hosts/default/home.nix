@@ -55,6 +55,7 @@
 
     # vesktop
     vesktop
+    armcord
     bottles
     converseen
     element
