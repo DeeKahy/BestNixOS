@@ -85,6 +85,8 @@ in
 
   hardware.nvidia.modesetting.enable = true;
 
+  programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   # Enable CUPS for printing
   services.printing.enable = true;
 
