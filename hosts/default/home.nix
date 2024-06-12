@@ -41,11 +41,7 @@
     neovim
     thunderbird
     github-desktop
-    unityhub
-    jetbrains.rider
-    davinci-resolve-studio
     kcalc
-    krita
     filezilla
     vscode
     
@@ -57,8 +53,6 @@
     # vesktop
     vesktop
     bottles
-    converseen
-    element
     prismlauncher
     obs-studio
     mpv
@@ -68,13 +62,10 @@
     tree
     git
     gh
-    ripgrep
-    wget
     eza
     bat
     zoxide # very cool cd alternative
     fastfetch
-    neofetch 
     nushell # An interesting bash alternative
     starship # the prompt manager that makes it look fancy
     carapace # Auto completion for the shell
@@ -83,30 +74,15 @@
 # dumb dependencies
     gcc
     xsel
-    openjdk21
-    maven
-    nodejs
     cargo
 
     dotnetCorePackages.sdk_6_0_1xx
-    ffmpeg
-    lazygit
     sidequest
-    cpu-x
-    boxbuddy
-    patchelf
-    distrobox
-    podman
     blueman
    libreoffice-qt6-still
 
 # fun
-    cmatrix
-    handbrake
-    telegram-desktop
-    gimp
   qjackctl
-  plex-media-player
   pdfarranger
   ];
 
