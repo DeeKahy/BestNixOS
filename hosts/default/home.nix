@@ -85,6 +85,7 @@
   qjackctl
   pdfarranger
   xautoclick
+  jetbrains.rust-rover
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
