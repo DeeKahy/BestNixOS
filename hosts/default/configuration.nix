@@ -134,6 +134,7 @@ in
     gparted
     fontconfig
   cmake
+  freetype
 
   ];
 
