@@ -88,6 +88,8 @@
   jetbrains.rust-rover
   pkg-config
   pkgs.openssl.dev
+  fontconfig
+  cmake
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
