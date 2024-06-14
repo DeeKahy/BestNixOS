@@ -133,6 +133,7 @@ in
     mangohud
     gparted
     fontconfig
+  cmake
 
   ];
 
