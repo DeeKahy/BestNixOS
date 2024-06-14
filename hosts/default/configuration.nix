@@ -132,6 +132,8 @@ in
     protonup
     mangohud
     gparted
+    fontconfig
+
   ];
 
 

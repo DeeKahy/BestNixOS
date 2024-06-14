@@ -88,7 +88,6 @@
   jetbrains.rust-rover
   pkg-config
   pkgs.openssl.dev
-  fontconfig
   cmake
   ];
 
