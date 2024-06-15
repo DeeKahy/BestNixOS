@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     pyprland
     hyprpicker
+    hyprcursor
     hyprlock
     hypridle
     hyprpaper
