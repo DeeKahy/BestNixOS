@@ -8,10 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    fufexan-dotfiles = {
-    url = "github:fufexan/dotfiles";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
