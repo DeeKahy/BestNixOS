@@ -8,6 +8,5 @@
     dioxus-cli
     surrealdb
     surrealdb-migrations
-    surrealist
   ];
 }
