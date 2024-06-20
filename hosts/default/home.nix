@@ -35,7 +35,6 @@
     # '')
 
     # applications
-    armcord
     firefox
     kate
     neovim
@@ -50,8 +49,9 @@
     heroic
     lutris
 
-    vesktop
-    dorion
+    # vesktop
+    # dorion
+    armcord
     bottles
     prismlauncher
     obs-studio
