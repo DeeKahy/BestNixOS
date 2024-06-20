@@ -50,7 +50,7 @@
     heroic
     lutris
 
-    # vesktop
+    vesktop
     dorion
     bottles
     prismlauncher

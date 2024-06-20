@@ -23,7 +23,6 @@ in
     shell = pkgs.nushell;
     packages = with stablePkgs; [
       jetbrains.idea-ultimate
-          vesktop
     ];
   };
 
