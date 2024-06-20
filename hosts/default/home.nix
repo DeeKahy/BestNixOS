@@ -51,6 +51,7 @@
     lutris
 
     # vesktop
+    dorion
     bottles
     prismlauncher
     obs-studio
