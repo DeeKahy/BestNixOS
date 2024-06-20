@@ -51,7 +51,6 @@
     lutris
 
     # vesktop
-    vesktop
     bottles
     prismlauncher
     obs-studio
