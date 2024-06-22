@@ -121,8 +121,6 @@ in
   # OpenGL hardware acceleration
   hardware.opengl = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
   };
 
   # System packages
