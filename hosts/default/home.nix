@@ -80,6 +80,7 @@
     sidequest
     blueman
    libreoffice-qt6-still
+   temurin-jre-bin-8
 
 # fun
   qjackctl
