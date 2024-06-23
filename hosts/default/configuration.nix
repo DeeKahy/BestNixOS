@@ -152,7 +152,7 @@ programs.adb.enable = true;
   };
 
   # System state version
-  system.stateVersion = "24.11";
+  system.stateVersion = "23.11";
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
