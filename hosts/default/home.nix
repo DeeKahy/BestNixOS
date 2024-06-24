@@ -36,6 +36,7 @@
 
     # applications
     ventoy
+    gparted
     firefox
     kate
     neovim
