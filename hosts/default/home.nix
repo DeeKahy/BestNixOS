@@ -81,8 +81,7 @@
     blueman
    libreoffice-qt6-still
    temurin-jre-bin-8
-   abaddon
-
+dissent
 # fun
   qjackctl
   pdfarranger
