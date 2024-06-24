@@ -25,10 +25,6 @@ in
       jetbrains.idea-ultimate
     ];
   };
-    environment.shells = [
-    "/bin/bash"
-    # Add other shells here if necessary
-  ];
 
   # Home Manager configuration
   home-manager = {
@@ -40,13 +36,8 @@ in
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    glibc
-    gcc
-    zlib
-    gcc.libc
-    icu
-  ];
 
+  ];
   # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -135,8 +126,6 @@ in
     mangohud
     gparted
     fontconfig
-  cmake
-  freetype
 
   ];
 
@@ -149,6 +138,7 @@ in
     flake = "/home/deekahy/dotfiles/nixos";
   };
 programs.adb.enable = true;
+
   # Session variables
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";

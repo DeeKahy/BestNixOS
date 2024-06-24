@@ -36,15 +36,12 @@
 
     # applications
     ventoy
-    gparted
     firefox
     kate
     neovim
     thunderbird
     github-desktop
-    kcalc
     filezilla
-    vscode
     
     # gaming
     steam
@@ -71,7 +68,6 @@
     nushell # An interesting bash alternative
     starship # the prompt manager that makes it look fancy
     carapace # Auto completion for the shell
-    python3
 
 # dumb dependencies
     gcc
@@ -79,7 +75,6 @@
     cargo
 
     dotnetCorePackages.sdk_6_0_1xx
-    sidequest
     blueman
    libreoffice-qt6-still
    temurin-jre-bin-8
