@@ -25,6 +25,10 @@ in
       jetbrains.idea-ultimate
     ];
   };
+    environment.shells = [
+    "/bin/bash"
+    # Add other shells here if necessary
+  ];
 
   # Home Manager configuration
   home-manager = {

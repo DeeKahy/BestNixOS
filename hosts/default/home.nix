@@ -88,10 +88,7 @@
 # fun
   qjackctl
   pdfarranger
-  xautoclick
   jetbrains.rust-rover
-  pkg-config
-  pkgs.openssl.dev
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
