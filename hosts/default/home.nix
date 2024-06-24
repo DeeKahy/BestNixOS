@@ -82,6 +82,7 @@
    libreoffice-qt6-still
    temurin-jre-bin-8
    discord
+   vesktop
 # fun
   qjackctl
   pdfarranger
