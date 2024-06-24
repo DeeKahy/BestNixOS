@@ -35,6 +35,7 @@
     # '')
 
     # applications
+    ventoy
     firefox
     kate
     neovim
