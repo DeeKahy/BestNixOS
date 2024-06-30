@@ -71,7 +71,7 @@
 
 # dumb dependencies
     gcc
-    xsel
+    xclip  
     cargo
 
     dotnetCorePackages.sdk_6_0_1xx
