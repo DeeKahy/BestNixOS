@@ -73,7 +73,7 @@
     gcc
     xclip  
     cargo
-
+appimage-run
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
