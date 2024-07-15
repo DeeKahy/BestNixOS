@@ -75,6 +75,7 @@
     cargo
 appimage-run
 zed-editor
+glibc
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
