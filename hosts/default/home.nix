@@ -74,6 +74,7 @@
     xclip  
     cargo
 appimage-run
+zed-editor
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
