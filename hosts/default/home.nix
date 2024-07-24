@@ -69,6 +69,7 @@
     starship # the prompt manager that makes it look fancy
     carapace # Auto completion for the shell
 
+
 # dumb dependencies
     gcc
     xclip  
@@ -78,6 +79,7 @@ zed-editor
 glibc
 helix
 lldb_18
+python312Packages.python-lsp-server
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
