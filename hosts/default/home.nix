@@ -77,6 +77,7 @@ appimage-run
 zed-editor
 glibc
 helix
+lldb_18
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
