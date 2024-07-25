@@ -84,6 +84,9 @@ jdt-language-server
 taplo
 bash-language-server
 cmake-language-server
+texlab
+bitbake-language-server
+blueprint-compiler
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
