@@ -87,6 +87,7 @@ cmake-language-server
 texlab
 bitbake-language-server
 blueprint-compiler
+ffmpeg
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
