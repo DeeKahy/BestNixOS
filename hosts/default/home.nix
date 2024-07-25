@@ -81,6 +81,7 @@ helix
 lldb_18
 python312Packages.python-lsp-server
 jdt-language-server
+taplo
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
