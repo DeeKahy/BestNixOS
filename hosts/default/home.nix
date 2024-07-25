@@ -90,6 +90,7 @@ blueprint-compiler
 ffmpeg
 glibc
 path-of-building
+nodejs
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
