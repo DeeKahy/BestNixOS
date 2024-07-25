@@ -89,6 +89,7 @@ bitbake-language-server
 blueprint-compiler
 ffmpeg
 glibc
+path-of-building
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
