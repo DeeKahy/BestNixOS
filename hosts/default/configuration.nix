@@ -34,10 +34,10 @@ in
     };
   };
 
-  programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
 
   ];
+
   # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -82,7 +82,7 @@ in
 
   # Enable CUPS for printing
   services.printing.enable = true;
-
+  programs.nix-ld.enable = true;
   # Enable sound with PipeWire
   services.pipewire = {
     enable = true;
@@ -143,6 +143,7 @@ programs.adb.enable = true;
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
     # JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
   };
+
 
   # System state version
   system.stateVersion = "23.11";
