@@ -83,6 +83,7 @@ python312Packages.python-lsp-server
 jdt-language-server
 taplo
 bash-language-server
+cmake-language-server
     dotnetCorePackages.sdk_6_0_1xx
     blueman
    libreoffice-qt6-still
