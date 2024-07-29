@@ -23,6 +23,7 @@ in
     shell = pkgs.nushell;
     packages = with stablePkgs; [
       jetbrains.idea-ultimate
+
     ];
   };
 
@@ -76,6 +77,10 @@ in
   services.xserver.desktopManager.plasma6.enable = true;
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  zramSwap = {
+      enable = true;
+      algorithm = "lz4";
+    };
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia.modesetting.enable = true;
@@ -125,7 +130,13 @@ in
     mangohud
     gparted
     fontconfig
-
+    # This is the to add the application
+    # Add this to add a Desktop Item
+    # This requires the `app`, but the way it's setup right now,
+    # it does not install the `app` automatically 
+    # Add this to add a Desktop Item
+    # This requires the `app`, but the way it's setup right now,
+    # it does not install the `app` automatically 
   ];
 
 

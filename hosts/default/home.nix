@@ -42,6 +42,7 @@
     thunderbird
     github-desktop
     filezilla
+    microsoft-edge-dev
     
     # gaming
     steam
