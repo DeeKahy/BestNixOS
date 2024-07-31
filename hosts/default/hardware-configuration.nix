@@ -24,7 +24,7 @@
       fsType = "ext4";
           mountPoint = "/run/media/deekahy/game";
     };
-
+  
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/F67B-A13A";
       fsType = "vfat";
