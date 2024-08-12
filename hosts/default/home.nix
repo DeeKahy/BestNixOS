@@ -35,6 +35,7 @@
     # '')
 
     # applications
+    ladybird
     ventoy
     firefox
     kate
