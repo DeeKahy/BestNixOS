@@ -43,6 +43,7 @@
     github-desktop
     filezilla
     microsoft-edge-dev
+    dnsperf
     
     # gaming
     steam
