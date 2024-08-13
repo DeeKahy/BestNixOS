@@ -33,6 +33,7 @@
     #   eco "Hello, ${config.home.username}!"
 
     # '')
+    kdenlive
 
     # applications
     ladybird
