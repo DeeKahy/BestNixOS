@@ -34,6 +34,7 @@
 
     # '')
     kdenlive
+    go
 
     # applications
     ladybird
