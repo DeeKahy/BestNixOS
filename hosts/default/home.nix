@@ -35,6 +35,7 @@
     # '')
     kdenlive
     go
+    obsidian
 
     # applications
     ladybird
