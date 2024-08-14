@@ -32,9 +32,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   eco "Hello, ${config.home.username}!"
     # '')
-    kdenlive
     go
     obsidian
+    davinci-resolve-studio
 
     # applications
     ladybird
