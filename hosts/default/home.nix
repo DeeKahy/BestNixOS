@@ -31,7 +31,6 @@
     # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   eco "Hello, ${config.home.username}!"
-
     # '')
     kdenlive
     go

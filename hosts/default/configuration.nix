@@ -131,6 +131,7 @@ in
     mangohud
     gparted
     fontconfig
+     cudaPackages_12_2.cudatoolkit 
     # This is the to add the application
     # Add this to add a Desktop Item
     # This requires the `app`, but the way it's setup right now,
