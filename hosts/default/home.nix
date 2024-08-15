@@ -40,7 +40,7 @@
     # applications
     ladybird
     ventoy
-    firefox
+    firefox-devedition
     kate
     neovim
     thunderbird
