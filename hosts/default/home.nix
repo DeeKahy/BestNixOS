@@ -35,6 +35,7 @@
     go
     obsidian
     davinci-resolve-studio
+    handbrake
 
     # applications
     ladybird
