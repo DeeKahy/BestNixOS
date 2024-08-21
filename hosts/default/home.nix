@@ -42,10 +42,10 @@
     # applications
     ladybird
     ventoy
-    firefox-devedition
+    firefox-devedition-unwrapped
     kate
     neovim
-    thunderbird
+    thunderbird-unwrapped
     github-desktop
     filezilla
     microsoft-edge-dev
