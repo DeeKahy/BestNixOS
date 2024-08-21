@@ -45,7 +45,7 @@
     firefox-devedition
     kate
     neovim
-    thunderbird
+    thunderbird-unwrapped
     github-desktop
     filezilla
     microsoft-edge-dev
