@@ -20,7 +20,7 @@ in
   users.users.deekahy = {
     isNormalUser = true;
     description = "DeeKahy";
-    extraGroups = [ "networkmanager" "wheel" "disk" ];
+    extraGroups = [ "networkmanager" "wheel" "disk" "audio" ];
     shell = pkgs.nushell;
     packages = with stablePkgs; [
       jetbrains.idea-ultimate
