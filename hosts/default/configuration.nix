@@ -1,3 +1,5 @@
+# configuration.nix
+
 { config, pkgs, lib, inputs, ... }:
 let
   stablePkgs = import inputs.stablenixpkgs {
@@ -24,7 +26,6 @@ in
     shell = pkgs.nushell;
     packages = with stablePkgs; [
       jetbrains.idea-ultimate
-
     ];
   };
 
@@ -36,9 +37,7 @@ in
     };
   };
 
-  programs.nix-ld.libraries = with pkgs; [
-
-  ];
+  programs.nix-ld.libraries = with pkgs; [];
 
   # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
@@ -79,17 +78,17 @@ in
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
   zramSwap = {
-      enable = true;
-      algorithm = "lz4";
-    };
+    enable = true;
+    algorithm = "lz4";
+  };
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia.modesetting.enable = true;
-  
 
   # Enable CUPS for printing
   services.printing.enable = true;
   programs.nix-ld.enable = true;
+
   # Enable sound with PipeWire
   services.pipewire = {
     enable = true;
@@ -122,6 +121,15 @@ in
   # OpenGL hardware acceleration
   hardware.opengl = {
     enable = true;
+    extraPackages = with pkgs; [
+      vaapiVdpau
+      libva
+      libva-utils
+      vdpau-va-driver
+      libvdpau-va-gl
+      intel-media-driver # For Intel GPUs
+      ffmpeg
+    ];
   };
 
   # System packages
@@ -132,9 +140,8 @@ in
     mangohud
     gparted
     fontconfig
-     cudaPackages_12_2.cudatoolkit 
+    cudaPackages_12_2.cudatoolkit 
   ];
-
 
   # NH program configuration
   programs.nh = {
@@ -143,15 +150,24 @@ in
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/deekahy/dotfiles/nixos";
   };
-programs.adb.enable = true;
+
+  programs.adb.enable = true;
+
+  # Enable Firefox Developer Edition with VA-API support
+  programs.firefox-devedition = {
+    enable = true;
+    package = pkgs.firefox-devedition-bin.override {
+      enableVaapi = true;
+    };
+  };
 
   # Session variables
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
-    MOZ_ENABLE_WAYLAND="0 firefox";
-    # JAVA_HOME = "/nix/store/jnvh76s6vrmdd1rnzjll53j9apkrwxnc-openjdk-21+35";
+    MOZ_X11_EGL = "1";
+    MOZ_ENABLE_WAYLAND = "1"; # If using Wayland
+    LIBVA_DRIVER_NAME = "iHD"; # For Intel GPUs, or "nvidia" for NVIDIA GPUs, "radeonsi" for AMD
   };
-
 
   # System state version
   system.stateVersion = "23.11";
