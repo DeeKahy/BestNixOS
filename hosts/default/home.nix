@@ -42,7 +42,6 @@
     # applications
     ladybird
     ventoy
-    firefox-devedition
     kate
     neovim
     thunderbird-unwrapped
