@@ -85,6 +85,7 @@ in
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia.modesetting.enable = true;
+  
 
   # Enable CUPS for printing
   services.printing.enable = true;
@@ -132,13 +133,6 @@ in
     gparted
     fontconfig
      cudaPackages_12_2.cudatoolkit 
-    # This is the to add the application
-    # Add this to add a Desktop Item
-    # This requires the `app`, but the way it's setup right now,
-    # it does not install the `app` automatically 
-    # Add this to add a Desktop Item
-    # This requires the `app`, but the way it's setup right now,
-    # it does not install the `app` automatically 
   ];
 
 
