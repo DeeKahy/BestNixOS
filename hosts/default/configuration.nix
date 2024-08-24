@@ -153,20 +153,15 @@ in
 
   programs.adb.enable = true;
 
-  # Enable Firefox Developer Edition with VA-API support
-  programs.firefox-devedition = {
-    enable = true;
-    package = pkgs.firefox-devedition-bin.override {
-      enableVaapi = true;
-    };
-  };
+  # Enable Firefox Developer Edition
+  programs.firefox-devedition.enable = true;
 
   # Session variables
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
     MOZ_X11_EGL = "1";
     MOZ_ENABLE_WAYLAND = "1"; # If using Wayland
-    LIBVA_DRIVER_NAME = "iHD"; # For Intel GPUs, or "nvidia" for NVIDIA GPUs, "radeonsi" for AMD
+    LIBVA_DRIVER_NAME = "nvidia"; # For NVIDIA GPUs, or "iHD" for Intel, "radeonsi" for AMD
   };
 
   # System state version
