@@ -140,7 +140,8 @@ in
     mangohud
     gparted
     fontconfig
-    cudaPackages_12_2.cudatoolkit 
+    cudaPackages_12_2.cudatoolkit
+    pkgs.firefox-devedition-bin # Add Firefox Developer Edition here
   ];
 
   # NH program configuration
@@ -152,9 +153,6 @@ in
   };
 
   programs.adb.enable = true;
-
-  # Enable Firefox Developer Edition
-  programs.firefox-devedition.enable = true;
 
   # Session variables
   environment.sessionVariables = {
