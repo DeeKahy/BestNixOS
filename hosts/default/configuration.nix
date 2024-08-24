@@ -69,12 +69,12 @@ in
   # X11 windowing system configuration
   services.xserver = {
     enable = true;
-    layout = "us";
+    xkb.layout = "us";
   };
 
   # Display manager configuration
   services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
   zramSwap = {
@@ -119,13 +119,12 @@ in
   nixpkgs.config.allowUnfree = true;
 
   # OpenGL hardware acceleration
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       vaapiVdpau
       libva
       libva-utils
-      vdpau-va-driver
       libvdpau-va-gl
       intel-media-driver # For Intel GPUs
       ffmpeg
@@ -140,7 +139,7 @@ in
     mangohud
     gparted
     fontconfig
-    cudaPackages_12_2.cudatoolkit
+    cudaPackages_12_2.cudatoolkit 
     pkgs.firefox-devedition-bin # Add Firefox Developer Edition here
   ];
 
