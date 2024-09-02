@@ -1,5 +1,3 @@
-# configuration.nix
-
 { config, pkgs, lib, inputs, ... }:
 let
   stablePkgs = import inputs.stablenixpkgs {
