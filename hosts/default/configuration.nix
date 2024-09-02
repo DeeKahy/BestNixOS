@@ -80,4 +80,87 @@ in
   };
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  hardware
+  hardware.nvidia.modesetting.enable = true;
+
+  # Enable CUPS for printing
+  services.printing.enable = true;
+
+  # Enable sound with PipeWire
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+    pulse.enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+    jack.enable = true;
+  };
+
+  # Enable Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    gamescopeSession.enable = true;
+  };
+
+  # Enable GameMode
+  programs.gamemode.enable = true;
+
+  # Enable KDE Connect
+  programs.kdeconnect.enable = true;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # OpenGL hardware acceleration
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      vaapiVdpau
+      libva
+      libva-utils
+      libvdpau-va-gl
+      intel-media-driver # For Intel GPUs
+      ffmpeg
+    ];
+  };
+
+  # System packages
+  environment.systemPackages = with pkgs; [
+    nh
+    nix-output-monitor
+    protonup
+    mangohud
+    gparted
+    fontconfig
+    cudaPackages_12_2.cudatoolkit 
+    pkgs.firefox-devedition-bin # Add Firefox Developer Edition here
+  ];
+
+  # NH program configuration
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/deekahy/dotfiles/nixos";
+  };
+
+  programs.adb.enable = true;
+
+  # Session variables
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
+    MOZ_X11_EGL = "1";
+    MOZ_ENABLE_WAYLAND = "1"; # If using Wayland
+    LIBVA_DRIVER_NAME = "nvidia"; # For NVIDIA GPUs, or "iHD" for Intel, "radeonsi" for AMD
+  };
+
+  # System state version
+  system.stateVersion = "23.11";
+
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+}
