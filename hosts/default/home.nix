@@ -182,8 +182,6 @@ enable: true
           )
         '';
       shellAliases = {
-        vi = "nvim";
-        vim = "nvim";
 # nano = "hx";
         cd = "z";
       };
