@@ -28,13 +28,12 @@ in
     ];
   };
 
-  # Comment out Home Manager configuration
-  # home-manager = {
-  #   extraSpecialArgs = { inherit inputs; };
-  #   users = {
-  #     "deekahy" = import ./home.nix;
-  #   };
-  # };
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "deekahy" = import ./home.nix;
+    };
+  };
 
   # Bootloader configuration
   boot.loader.systemd-boot.enable = true;
@@ -79,7 +78,7 @@ in
     algorithm = "lz4";
   };
   services.xserver.videoDrivers = [ "nvidia" ];
-
+  hardware.nvidia.open=false;
   hardware.nvidia.modesetting.enable = true;
 
   # Enable CUPS for printing
@@ -122,7 +121,6 @@ in
       libva
       libva-utils
       libvdpau-va-gl
-      intel-media-driver # For Intel GPUs
       ffmpeg
     ];
   };
