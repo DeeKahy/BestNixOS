@@ -1,4 +1,3 @@
-
 { config, pkgs, lib, inputs, ... }:
 let
   stablePkgs = import inputs.stablenixpkgs {
@@ -6,7 +5,11 @@ let
     config = { allowUnfree = true; };
   };
 
-  ccat = stablePkgs.callPackage /home/deekahy/Documents/GitHub/spotify-remake/ccat.nix {};
+  ccatPath = builtins.path {
+    path = /home/deekahy/Documents/GitHub/spotify-remake/ccat.nix;
+  };
+
+  ccat = stablePkgs.callPackage ccatPath {};
 in
 {
   # Enable experimental Nix features
