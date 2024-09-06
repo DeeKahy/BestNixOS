@@ -1,14 +1,17 @@
+
 { config, pkgs, lib, inputs, ... }:
 let
   stablePkgs = import inputs.stablenixpkgs {
     system = pkgs.system;
     config = { allowUnfree = true; };
-    ccat = pkgs.callPackage /home/deekahy/Documents/GitHub/spotify-remake/ccat.nix {};
   };
+
+  ccat = stablePkgs.callPackage /home/deekahy/Documents/GitHub/spotify-remake/ccat.nix {};
 in
 {
   # Enable experimental Nix features
   nix.settings.experimental-features = "nix-command flakes";
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Import necessary configurations
@@ -72,15 +75,17 @@ in
   # Display manager configuration
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  # security.pam.services."wayland".enableKwallet = true;
 
+  # security.pam.services."wayland".enableKwallet = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+
   zramSwap = {
     enable = true;
     algorithm = "lz4";
   };
+
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open=true;
+  hardware.nvidia.open = true;
   hardware.nvidia.modesetting.enable = true;
 
   # Enable CUPS for printing
@@ -135,7 +140,7 @@ in
     mangohud
     gparted
     fontconfig
-    cudaPackages_12_2.cudatoolkit 
+    cudaPackages_12_2.cudatoolkit
     pkgs.firefox-devedition-bin # Add Firefox Developer Edition here
     ccat
   ];
