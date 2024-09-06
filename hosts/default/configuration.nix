@@ -71,7 +71,7 @@ in
   # Display manager configuration
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  security.pam.services."wayland".enableKwallet = true;
+  # security.pam.services."wayland".enableKwallet = true;
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
   zramSwap = {
