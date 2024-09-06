@@ -4,8 +4,7 @@ let
     system = pkgs.system;
     config = { allowUnfree = true; };
   };
-
-  ccat = stablePkgs.callPackage ./hosts/default/CopyCat/ccat.nix {};
+  ccat = pkgs.callPackage ./ccat.nix {};
 in
 {
   # Enable experimental Nix features

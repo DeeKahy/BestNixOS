@@ -49,6 +49,7 @@
     filezilla
     microsoft-edge-dev
     dnsperf
+    nixpkgs-fmt
     
     # gaming
     steam
