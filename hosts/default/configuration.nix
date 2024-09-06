@@ -5,11 +5,7 @@ let
     config = { allowUnfree = true; };
   };
 
-  ccatPath = builtins.path {
-    path = /home/deekahy/Documents/GitHub/spotify-remake/ccat.nix;
-  };
-
-  ccat = stablePkgs.callPackage ccatPath {};
+  ccat = stablePkgs.callPackage ./CopyCat/ccat.nix {};
 in
 {
   # Enable experimental Nix features
