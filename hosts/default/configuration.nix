@@ -5,7 +5,7 @@ let
     config = { allowUnfree = true; };
   };
 
-  ccat = stablePkgs.callPackage ./CopyCat/ccat.nix {};
+  ccat = stablePkgs.callPackage ./hosts/default/CopyCat/ccat.nix {};
 in
 {
   # Enable experimental Nix features
