@@ -3,7 +3,7 @@ let
   stablePkgs = import inputs.stablenixpkgs {
     system = pkgs.system;
     config = { allowUnfree = true; };
-    # ccat = pkgs.callPackage /home/deekahy/Documents/GitHub/spotify-remake/ccat.nix {};
+    ccat = pkgs.callPackage /home/deekahy/Documents/GitHub/spotify-remake/ccat.nix {};
   };
 in
 {
@@ -137,7 +137,7 @@ in
     fontconfig
     cudaPackages_12_2.cudatoolkit 
     pkgs.firefox-devedition-bin # Add Firefox Developer Edition here
-    # ccat
+    ccat
   ];
 
   # NH program configuration
