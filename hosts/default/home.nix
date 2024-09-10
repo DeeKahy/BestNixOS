@@ -112,6 +112,7 @@ vscode
   pdfarranger
   jetbrains.rust-rover
   anydesk
+  jetbrains.phpstorm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
