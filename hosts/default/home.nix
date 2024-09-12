@@ -20,6 +20,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+  firefox-devedition-bin
+  
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -40,14 +42,12 @@
     handbrake
 
     # applications
-    ladybird
     ventoy
     kate
     neovim
     thunderbird-unwrapped
     github-desktop
     filezilla
-    microsoft-edge
     dnsperf
     nixfmt
     

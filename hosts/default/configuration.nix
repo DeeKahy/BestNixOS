@@ -139,7 +139,6 @@ in
     gparted
     fontconfig
     cudaPackages_12_2.cudatoolkit
-    pkgs.firefox-devedition-bin # Add Firefox Developer Edition here
     copycat
     wl-clipboard
   ];
