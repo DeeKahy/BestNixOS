@@ -6,7 +6,7 @@
 , appimageTools
 }:
 
-stdenv.mkDerivation rec {
+let
   pname = "zen-browser";
   version = "1.0.0-a.39";
 
@@ -15,31 +15,35 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-tFci3PttYYhkSPrABW8LHSm95h5v7t1GIZWzdtsOF9Q=";
   };
 
-  nativeBuildInputs = [ makeWrapper appimageTools ];
+  appimageContents = appimageTools.extractType2 { inherit pname version src; };
 
-  dontUnpack = true;
+in stdenv.mkDerivation {
+  pname = "zen-browser";
+  version = "1.0.0-a.39";
+
+  src = fetchurl {
+    url = "https://github.com/zen-browser/desktop/releases/download/${version}/zen-specific.AppImage";
+    sha256 = "sha256-tFci3PttYYhkSPrABW8LHSm95h5v7t1GIZWzdtsOF9Q=";
+  };
+
+  buildInputs = [
+    makeWrapper
+    electron
+    # Removed appimageTools as it's a function, not a derivation
+  ];
 
   installPhase = ''
-    runHook preInstall
+    ${appimageTools.extractType2} --appimage ${src}
 
-    mkdir -p $out/bin $out/share/applications $out/share/${pname}
-    cp $src $out/share/${pname}/${pname}.AppImage
-    chmod +x $out/share/${pname}/${pname}.AppImage
-
-    # Extract AppImage contents
-    cd $out/share/${pname}
-    ${appimageTools.extractType2 { name = pname; src = src; }}
-
-    # Create wrapper
+    mv $out/bin/${pname} $out/bin/${pname}-unwrapped
     makeWrapper ${electron}/bin/electron $out/bin/${pname} \
-      --add-flags "$out/share/${pname}/${pname}.AppImage"
+      --add-flags "$out/bin/${pname}-unwrapped"
 
-    # Create desktop entry
-    cp $out/share/${pname}/zen-browser.desktop $out/share/applications/${pname}.desktop
+    install -m 444 -D ${appimageContents}/${pname}.desktop $out/share/applications/${pname}.desktop
     substituteInPlace $out/share/applications/${pname}.desktop \
       --replace 'Exec=AppRun' 'Exec=${pname}'
 
-    runHook postInstall
+    cp -r ${appimageContents}/usr/share/icons $out/share
   '';
 
   meta = with lib; {
