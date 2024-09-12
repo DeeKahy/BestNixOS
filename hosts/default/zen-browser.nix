@@ -1,97 +1,52 @@
 { lib
-
 , stdenv
-
-, fetchFromGitHub
-
+, fetchurl
 , makeWrapper
-
-, firefox-unwrapped
-
-, glib
-
-, gtk3
-
-, libXtst
-
-, libnotify
-
-, libGLU
-
-, nss
-
-, nspr
-
+, electron
+, appimageTools
 }:
 
 stdenv.mkDerivation rec {
-
   pname = "zen-browser";
-
   version = "1.0.0-a.39";
 
-  src = fetchFromGitHub {
-
-    owner = "zen-browser";
-
-    repo = "desktop";
-
-    rev = version;
-
-    hash = "sha256-f1pYDzsGKagBmmEoF3YXcWLiApzyRwFbLSo3VyUvvjc="; # Replace with actual hash after first build attempt
-
+  src = fetchurl {
+    url = "https://github.com/zen-browser/desktop/releases/download/${version}/zen-specific.AppImage";
+    sha256 = "sha256-tFci3PttYYhkSPrABW8LHSm95h5v7t1GIZWzdtsOF9Q=";
   };
 
-  nativeBuildInputs = [ makeWrapper ];
+  nativeBuildInputs = [ makeWrapper appimageTools ];
 
-  buildInputs = [
-
-    firefox-unwrapped
-
-    glib
-
-    gtk3
-
-    libXtst
-
-    libnotify
-
-    libGLU
-
-    nss
-
-    nspr
-
-  ];
+  dontUnpack = true;
 
   installPhase = ''
+    runHook preInstall
 
-    mkdir -p $out/bin
+    mkdir -p $out/bin $out/share/applications $out/share/${pname}
+    cp $src $out/share/${pname}/${pname}.AppImage
+    chmod +x $out/share/${pname}/${pname}.AppImage
 
-    cp -r * $out/
+    # Extract AppImage contents
+    cd $out/share/${pname}
+    ${appimageTools.extractType2 { name = pname; src = src; }}
 
-    chmod +x $out/zen
+    # Create wrapper
+    makeWrapper ${electron}/bin/electron $out/bin/${pname} \
+      --add-flags "$out/share/${pname}/${pname}.AppImage"
 
-    makeWrapper $out/zen $out/bin/zen-browser \
+    # Create desktop entry
+    cp $out/share/${pname}/zen-browser.desktop $out/share/applications/${pname}.desktop
+    substituteInPlace $out/share/applications/${pname}.desktop \
+      --replace 'Exec=AppRun' 'Exec=${pname}'
 
-      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath buildInputs}
-
+    runHook postInstall
   '';
 
   meta = with lib; {
-
-    description = "Firefox-based browser with a focus on privacy and customization";
-
-    homepage = "https://get-zen.vercel.app/";
-
+    description = "Zen Browser - Experience tranquillity while browsing the web without people tracking you";
+    homepage = "https://zen-browser.app";
     license = licenses.mpl20;
-
-    maintainers = [ ]; # Add maintainers if known
-
-    platforms = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-
-    mainProgram = "zen-browser";
-
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ ]; # Add maintainers if applicable
   };
-
 }
