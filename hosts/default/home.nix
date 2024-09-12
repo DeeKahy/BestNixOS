@@ -47,7 +47,7 @@
     thunderbird-unwrapped
     github-desktop
     filezilla
-    microsoft-edge-dev
+    microsoft-edge
     dnsperf
     nixfmt
     
