@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
     owner = "zen-browser";
     repo = "desktop";
     rev = version;
-    hash = lib.fakeHash; # Replace with actual hash after first build attempt
+    hash = "sha256-f1pYDzsGKagBmmEoF3YXcWLiApzyRwFbLSo3VyUvvjc="; # Replace with actual hash after first build attempt
   };
 
   nativeBuildInputs = [ makeWrapper ];
