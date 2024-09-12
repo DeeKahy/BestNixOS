@@ -4,7 +4,7 @@ let
     system = pkgs.system;
     config = { allowUnfree = true; };
   };
-  zen-browser = pkgs.callPackage ./zenbrowser.nix {};
+  zen-browser = pkgs.callPackage ./zen-browser.nix {};
   in
 {
   # Enable experimental Nix features
