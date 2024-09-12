@@ -4,8 +4,8 @@ let
     system = pkgs.system;
     config = { allowUnfree = true; };
   };
-  zen-browser = self.callPackage ./zenbrowser.nix {};
-in
+  zen-browser = pkgs.callPackage ./zenbrowser.nix {};
+  in
 {
   # Enable experimental Nix features
   nix.settings.experimental-features = "nix-command flakes";
@@ -141,7 +141,7 @@ in
     cudaPackages_12_2.cudatoolkit
     copycat
     wl-clipboard
-    zenbrowser
+    zen-browser
   ];
 
   # NH program configuration
