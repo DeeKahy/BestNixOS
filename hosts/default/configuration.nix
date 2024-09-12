@@ -140,7 +140,7 @@ in
     fontconfig
     cudaPackages_12_2.cudatoolkit
     pkgs.firefox-devedition-bin # Add Firefox Developer Edition here
-    ccat
+    copycat
     wl-clipboard
   ];
 
