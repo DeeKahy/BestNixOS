@@ -4,7 +4,7 @@ let
     system = pkgs.system;
     config = { allowUnfree = true; };
   };
-  ccat = pkgs.callPackage ./ccat.nix {};
+  # zenbrowser = pkgs.callPackage ./zenbrowser.nix {};
 in
 {
   # Enable experimental Nix features
