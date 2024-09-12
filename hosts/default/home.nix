@@ -49,7 +49,6 @@
     github-desktop
     filezilla
     dnsperf
-    nixfmt
     
     # gaming
     steam
