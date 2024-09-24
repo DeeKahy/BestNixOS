@@ -40,6 +40,7 @@
     davinci-resolve-studio
     kdenlive
     handbrake
+    espanso-wayland
 
     # applications
     ventoy
