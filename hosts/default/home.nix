@@ -77,7 +77,7 @@
     starship # the prompt manager that makes it look fancy
     carapace # Auto completion for the shell
 
-    
+   docker 
 
 # dumb dependencies
     gcc
