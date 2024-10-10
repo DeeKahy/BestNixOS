@@ -140,6 +140,10 @@ let
     cudaPackages_12_2.cudatoolkit
     copycat
     wl-clipboard
+    
+    
+    selenium-server-standalone
+    
   ];
 
   # NH program configuration
