@@ -50,6 +50,8 @@
     github-desktop
     filezilla
     dnsperf
+
+    # zed-editor
     
     # gaming
     steam
@@ -84,9 +86,7 @@
     xclip  
     cargo
 appimage-run
-zed-editor
 glibc
-helix
 lldb_18
 python312Packages.python-lsp-server
 jdt-language-server

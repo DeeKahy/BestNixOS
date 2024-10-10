@@ -140,7 +140,7 @@ let
     cudaPackages_12_2.cudatoolkit
     copycat
     wl-clipboard
-    
+    zed-editor
     
     selenium-server-standalone
     
