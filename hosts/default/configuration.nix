@@ -4,7 +4,6 @@ let
     system = pkgs.system;
     config = { allowUnfree = true; };
   };
-  zen-browser = pkgs.callPackage ./zen-browser.nix {};
   in
 {
   # Enable experimental Nix features
@@ -141,7 +140,6 @@ let
     cudaPackages_12_2.cudatoolkit
     copycat
     wl-clipboard
-    zen-browser
   ];
 
   # NH program configuration
