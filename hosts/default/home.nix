@@ -60,7 +60,6 @@
 
     # vesktop
     # dorion
-    armcord
     bottles
     prismlauncher
     obs-studio
