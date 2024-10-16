@@ -131,13 +131,7 @@ let
 
   
   services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-        flatpak install --user https://sober.vinegarhq.org/sober.flatpakref 
-    '';
-  };
+
   # System packages
   environment.systemPackages = with pkgs; [
     nh

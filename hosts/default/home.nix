@@ -34,10 +34,8 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   eco "Hello, ${config.home.username}!"
     # '')
-    bitwarden-desktop
     go
     obsidian
-    davinci-resolve-studio
     kdenlive
     handbrake
     espanso-wayland
