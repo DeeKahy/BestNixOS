@@ -23,7 +23,7 @@ let
     isNormalUser = true;
     description = "DeeKahy";
     extraGroups = [ "networkmanager" "wheel" "disk" "audio" ];
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
     packages = with stablePkgs; [
       jetbrains.idea-ultimate
     ];
@@ -144,11 +144,15 @@ let
     copycat
     wl-clipboard
     zed-editor
+    fish
     
     selenium-server-standalone
     php83Packages.php-codesniffer
     unzip
     nil
+    python3
+    nodejs
+    git
     
     firefox-devedition-bin
     obsidian
