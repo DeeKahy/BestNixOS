@@ -74,6 +74,12 @@ let
   # Display manager configuration
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    xwayland.enable = true;
+    # enableKwallet = true;
+  };
 
   # security.pam.services."wayland".enableKwallet = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
@@ -250,6 +256,8 @@ vscode
     MOZ_X11_EGL = "1";
     MOZ_ENABLE_WAYLAND = "1"; # If using Wayland
     LIBVA_DRIVER_NAME = "nvidia"; # For NVIDIA GPUs, or "iHD" for Intel, "radeonsi" for AMD
+    WLR_NO_HARDWARE_CURSORS = "1"; # For Wayland
+    NIXOS_OZONE_WL = "1"; # For Wayland
   };
 
   # System state version
