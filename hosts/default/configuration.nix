@@ -194,6 +194,8 @@ let
    docker 
 
 # dumb dependencies
+    rustc
+    cargo
     gcc
     xclip  
     cargo
