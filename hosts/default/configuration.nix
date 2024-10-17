@@ -148,6 +148,82 @@ let
     selenium-server-standalone
     php83Packages.php-codesniffer
     
+    firefox-devedition-bin
+    obsidian
+    kdenlive
+    handbrake
+    espanso-wayland
+
+    # applications
+    ventoy
+    kate
+    neovim
+    thunderbird-unwrapped
+    github-desktop
+    filezilla
+    dnsperf
+
+    # zed-editor
+    
+    # gaming
+    steam
+    heroic
+    lutris
+
+    # vesktop
+    # dorion
+    bottles
+    prismlauncher
+    obs-studio
+    mpv
+
+
+    # terminal tools
+    tree
+    git
+    gh
+    eza
+    bat
+    zoxide # very cool cd alternative
+    fastfetch
+    nushell # An interesting bash alternative
+    starship # the prompt manager that makes it look fancy
+    carapace # Auto completion for the shell
+
+   docker 
+
+# dumb dependencies
+    gcc
+    xclip  
+    cargo
+appimage-run
+glibc
+lldb_18
+python312Packages.python-lsp-server
+jdt-language-server
+taplo
+bash-language-server
+cmake-language-server
+texlab
+bitbake-language-server
+blueprint-compiler
+ffmpeg
+glibc
+path-of-building
+nodejs
+vscode
+    dotnetCorePackages.sdk_6_0_1xx
+    blueman
+   libreoffice-qt6-still
+   temurin-jre-bin-8
+   discord
+   vesktop
+# fun
+  qjackctl
+  pdfarranger
+  jetbrains.rust-rover
+  anydesk
+  jetbrains.phpstorm
   ];
 
   # NH program configuration
