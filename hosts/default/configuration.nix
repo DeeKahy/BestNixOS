@@ -147,6 +147,7 @@ let
     
     selenium-server-standalone
     php83Packages.php-codesniffer
+    unzip
     
     firefox-devedition-bin
     obsidian
