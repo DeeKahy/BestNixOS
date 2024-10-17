@@ -18,6 +18,8 @@ let
     # inputs.home-manager.nixosModules.default
   ];
 
+  programs.fish.enable = true;
+
   # User configuration
   users.users.deekahy = {
     isNormalUser = true;
