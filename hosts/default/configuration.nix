@@ -76,10 +76,11 @@ let
   services.desktopManager.plasma6.enable = true;
   programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
     xwayland.enable = true;
     # enableKwallet = true;
   };
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # security.pam.services."wayland".enableKwallet = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
@@ -137,7 +138,7 @@ let
     ];
   };
 
-  
+
   services.flatpak.enable = true;
 
   # System packages
@@ -153,7 +154,7 @@ let
     wl-clipboard
     zed-editor
     fish
-    
+
     selenium-server-standalone
     php83Packages.php-codesniffer
     unzip
@@ -161,7 +162,7 @@ let
     python3
     nodejs
     git
-    
+
     firefox-devedition-bin
     obsidian
     kdenlive
@@ -176,9 +177,18 @@ let
     github-desktop
     filezilla
     dnsperf
+    waybar
+    (waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags or [] ++ [ "-Dexperimental=true" ];
+    })
+    )
+    dunst
+    libnotify
+    swww
+    rofi-wayland
 
     # zed-editor
-    
+
     # gaming
     steam
     heroic
@@ -202,13 +212,13 @@ let
     zoxide # very cool cd alternative
     fastfetch
 
-   docker 
+   docker
 
 # dumb dependencies
     rustc
     cargo
     gcc
-    xclip  
+    xclip
     cargo
 appimage-run
 glibc
@@ -253,10 +263,10 @@ vscode
   # Session variables
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
-    MOZ_X11_EGL = "1";
+ #   MOZ_X11_EGL = "1";
     MOZ_ENABLE_WAYLAND = "1"; # If using Wayland
-    LIBVA_DRIVER_NAME = "nvidia"; # For NVIDIA GPUs, or "iHD" for Intel, "radeonsi" for AMD
-    WLR_NO_HARDWARE_CURSORS = "1"; # For Wayland
+ #   LIBVA_DRIVER_NAME = "nvidia"; # For NVIDIA GPUs, or "iHD" for Intel, "radeonsi" for AMD
+    WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1"; # For Wayland
   };
 
