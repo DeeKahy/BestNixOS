@@ -50,6 +50,9 @@ let
   time.timeZone = "Europe/Copenhagen";
 
   # Internationalization settings
+    i18n = {
+    supportedLocales = [ "en_AU.UTF-8" ];
+  };
   i18n.defaultLocale = "en_DK.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";
