@@ -184,6 +184,7 @@ let
     prismlauncher
     obs-studio
     mpv
+    kitty
 
 
     # terminal tools
