@@ -127,6 +127,7 @@ let
   nixpkgs.config.allowUnfree = true;
 
   # OpenGL hardware acceleration
+  hardware.opengl.enable = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -137,7 +138,6 @@ let
       ffmpeg
     ];
   };
-  opengl.enable = true;
 
 
   services.flatpak.enable = true;
@@ -221,6 +221,7 @@ let
     gcc
     xclip
     cargo
+    nixd
 appimage-run
 glibc
 lldb_18
