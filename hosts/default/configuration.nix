@@ -183,6 +183,7 @@ let
     # Terminal Utilities
     fish
     kitty
+    inputs.wezterm.packages.${pkgs.system}.default
     tree
     eza
     bat
