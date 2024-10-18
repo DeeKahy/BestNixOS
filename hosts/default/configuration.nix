@@ -184,6 +184,7 @@ let
     fish
     kitty
     alacritty
+    wezterm
     tree
     eza
     bat
