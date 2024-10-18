@@ -248,7 +248,7 @@ let
     # MOZ_ENABLE_WAYLAND = "1"; # If using Wayland
  #   LIBVA_DRIVER_NAME = "nvidia"; # For NVIDIA GPUs, or "iHD" for Intel, "radeonsi" for AMD
     WLR_NO_HARDWARE_CURSORS = "1";
-    # NIXOS_OZONE_WL = "1"; # For Wayland
+    NIXOS_OZONE_WL = "1"; # For Wayland
   };
 
   # System state version
