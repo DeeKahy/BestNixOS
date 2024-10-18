@@ -236,7 +236,7 @@ let
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/deekahy/dotfiles/nixos";
+    flake = "/home/deekahy/dotfiles";
   };
 
   programs.adb.enable = true;
