@@ -15,10 +15,16 @@ let
   imports = [
     ./hardware-configuration.nix
     # Comment out Home Manager for now
-    # inputs.home-manager.nixosModules.default
+    inputs.home-manager.nixosModules.default
   ];
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      ls = "eza";
+      # Add more aliases here
+    };
+  };
 
   # User configuration
   users.users.deekahy = {
@@ -74,13 +80,13 @@ let
   # Display manager configuration
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    # enableKwallet = true;
-  };
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  #   # enableKwallet = true;
+  # };
+  # xdg.portal.enable = true;
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # security.pam.services."wayland".enableKwallet = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
@@ -95,7 +101,7 @@ let
   hardware.nvidia.modesetting.enable = true;
 
   # Enable CUPS for printing
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with PipeWire
   services.pipewire = {
@@ -144,112 +150,86 @@ let
 
   # System packages
   environment.systemPackages = with pkgs; [
+    # System and Package Management
     nh
     nix-output-monitor
     protonup
-    mangohud
     gparted
     fontconfig
     cudaPackages_12_2.cudatoolkit
-    copycat
-    wl-clipboard
-    zed-editor
-    fish
-
-    selenium-server-standalone
-    php83Packages.php-codesniffer
-    unzip
-    nil
-    python3
-    nodejs
-    git
-
-    firefox-devedition-bin
-    obsidian
-    kdenlive
-    handbrake
-    espanso-wayland
-
-    # applications
-    ventoy
-    kate
-    neovim
-    thunderbird-unwrapped
-    github-desktop
-    filezilla
-    dnsperf
-    waybar
-    (waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags or [] ++ [ "-Dexperimental=true" ];
-    })
-    )
-    dunst
-    libnotify
-    swww
-    rofi-wayland
-
-    # zed-editor
-
-    # gaming
-    steam
-    heroic
-    lutris
-
-    # vesktop
-    # dorion
-    bottles
-    prismlauncher
-    obs-studio
-    mpv
-    kitty
-
-
-    # terminal tools
-    tree
+    appimage-run
+    glibc
+  
+    # Development Tools
     git
     gh
-    eza
-    bat
-    zoxide # very cool cd alternative
-    fastfetch
-
-   docker
-
-# dumb dependencies
+    nodejs
+    python3
     rustc
     cargo
     gcc
-    xclip
-    cargo
-    nixd
-appimage-run
-glibc
-lldb_18
-python312Packages.python-lsp-server
-jdt-language-server
-taplo
-bash-language-server
-cmake-language-server
-texlab
-bitbake-language-server
-blueprint-compiler
-ffmpeg
-glibc
-path-of-building
-nodejs
-vscode
     dotnetCorePackages.sdk_6_0_1xx
+    nixd
+    selenium-server-standalone
+    php83Packages.php-codesniffer
+  
+    # Text Editors and IDEs
+    neovim
+    zed-editor
+    vscode
+    kate
+    jetbrains.phpstorm
+  
+    # Terminal Utilities
+    fish
+    kitty
+    tree
+    eza
+    bat
+    zoxide
+    fastfetch
+    xclip
+  
+    # File Management and Utilities
+    unzip
+    copycat
+    wl-clipboard
+    filezilla
+  
+    # Browsers and Communication
+    firefox-devedition-bin
+    vesktop
+  
+    # Multimedia
+    obs-studio
+    handbrake
+    mpv
+    ffmpeg
+  
+    # Gaming
+    steam
+    lutris
+    bottles
+    prismlauncher
+    mangohud
+  
+    # Office and Productivity
+    obsidian
+    pdfarranger
+  
+    # System Utilities
     blueman
-   libreoffice-qt6-still
-   temurin-jre-bin-8
-   discord
-   vesktop
-# fun
-  qjackctl
-  pdfarranger
-  jetbrains.rust-rover
-  anydesk
-  jetbrains.phpstorm
+  
+    # Audio
+    qjackctl
+  
+    # Version Control and Collaboration
+    github-desktop
+  
+    # Java Runtime
+    temurin-jre-bin-8
+  
+    # Miscellaneous
   ];
 
   # NH program configuration
@@ -266,10 +246,10 @@ vscode
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
  #   MOZ_X11_EGL = "1";
-    MOZ_ENABLE_WAYLAND = "1"; # If using Wayland
+    # MOZ_ENABLE_WAYLAND = "1"; # If using Wayland
  #   LIBVA_DRIVER_NAME = "nvidia"; # For NVIDIA GPUs, or "iHD" for Intel, "radeonsi" for AMD
     WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1"; # For Wayland
+    # NIXOS_OZONE_WL = "1"; # For Wayland
   };
 
   # System state version
