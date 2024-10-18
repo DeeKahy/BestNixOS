@@ -15,13 +15,14 @@ let
   imports = [
     ./hardware-configuration.nix
     # Comment out Home Manager for now
-    inputs.home-manager.nixosModules.default
+    # inputs.home-manager.nixosModules.default
   ];
 
   programs.fish = {
     enable = true;
     shellAliases = {
       ls = "eza";
+      cd = "z";
       # Add more aliases here
     };
   };
@@ -133,7 +134,6 @@ let
   nixpkgs.config.allowUnfree = true;
 
   # OpenGL hardware acceleration
-  hardware.opengl.enable = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -208,6 +208,7 @@ let
   
     # Gaming
     steam
+    heroic
     lutris
     bottles
     prismlauncher
@@ -225,9 +226,6 @@ let
   
     # Version Control and Collaboration
     github-desktop
-  
-    # Java Runtime
-    temurin-jre-bin-8
   
     # Miscellaneous
   ];
