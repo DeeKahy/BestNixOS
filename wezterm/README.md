@@ -1,0 +1,1 @@
+The .wezterm.lua file needs to be in your home directory
