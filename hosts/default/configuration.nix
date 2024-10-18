@@ -183,6 +183,7 @@ let
     # Terminal Utilities
     fish
     kitty
+    alacritty
     tree
     eza
     bat
