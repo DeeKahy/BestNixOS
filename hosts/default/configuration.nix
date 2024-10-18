@@ -183,7 +183,6 @@ let
     # Terminal Utilities
     fish
     kitty
-    alacritty
     wezterm
     tree
     eza
