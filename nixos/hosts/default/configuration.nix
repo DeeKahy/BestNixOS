@@ -214,7 +214,7 @@ let
     bottles
     prismlauncher
     mangohud
-    factorio
+    # factorio
   
     # Office and Productivity
     obsidian
