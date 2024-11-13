@@ -13,7 +13,7 @@
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-
+services.flatpak.enable = true;
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -98,9 +98,11 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  programs.fish.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.deekahy = {
     isNormalUser = true;
+     # shell = pkgs.fish;
     description = "deekahy";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
@@ -128,6 +130,10 @@
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     steam
+    vim
+    git
+    gh
+    sqlite
   ];
 
   # Enable Steam
@@ -170,9 +176,8 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/deekahy/BestNixOS/";
+    flake = "/home/deekahy/BestNixOS";
   };
-
   # Session variables
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/deekahy/.steam/root/compatibilitytools.d";
