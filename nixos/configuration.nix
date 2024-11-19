@@ -32,8 +32,8 @@ services.flatpak.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
-  hardware.nvidia.open = true;
+  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  # hardware.nvidia.open = true;
   hardware.nvidia.modesetting.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -112,10 +112,6 @@ services.flatpak.enable = true;
      # shell = pkgs.fish;
     description = "deekahy";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      kdePackages.kate
-      #  thunderbird
-    ];
     packages = with stablePkgs; [
       bambu-studio
     ];
