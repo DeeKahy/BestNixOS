@@ -30,7 +30,6 @@
 pkgs.bottles
 pkgs.prismlauncher
 pkgs.p7zip
-pkgs.bambu-studio
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

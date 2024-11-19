@@ -7,7 +7,14 @@
   inputs,
   lib,
   ...
-}: {
+}: 
+let
+  stablePkgs = import inputs.stablenixpkgs {
+    system = pkgs.system;
+    config = { allowUnfree = true; };
+  };
+  in
+{
   # Enable flakes and nix commands
   nix.settings.experimental-features = "nix-command flakes";
   # Enable Bluetooth
@@ -108,6 +115,9 @@ services.flatpak.enable = true;
     packages = with pkgs; [
       kdePackages.kate
       #  thunderbird
+    ];
+    packages = with stablePkgs; [
+      bambu-studio
     ];
   };
 
