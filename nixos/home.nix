@@ -26,10 +26,8 @@
     pkgs.vesktop
     pkgs.zed-editor
     pkgs.protonup
-    pkgs.kitty
-pkgs.bottles
 pkgs.prismlauncher
-pkgs.p7zip
+pkgs.ghostty
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

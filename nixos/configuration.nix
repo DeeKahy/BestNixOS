@@ -31,9 +31,10 @@ services.flatpak.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
-  # hardware.nvidia.open = true;
+  # boot.kernelPackages = pkgs.linuxPackages_6_11;
+  boot.kernelPackages = pkgs.linuxPackages;
+ hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+ hardware.nvidia.open = true;
   hardware.nvidia.modesetting.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -74,8 +75,6 @@ services.flatpak.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # hyprland
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -111,7 +110,7 @@ services.flatpak.enable = true;
     isNormalUser = true;
      # shell = pkgs.fish;
     description = "deekahy";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" ];
     packages = with stablePkgs; [
       bambu-studio
     ];
@@ -140,6 +139,12 @@ services.flatpak.enable = true;
     git
     gh
     sqlite
+blender
+lutris
+vlc
+obs-studio
+sage
+davinci-resolve-studio
   ];
 
   # Enable Steam
@@ -194,3 +199,4 @@ services.flatpak.enable = true;
     NIXOS_OZONE_WL = "1"; # For Wayland
   };
 }
+
