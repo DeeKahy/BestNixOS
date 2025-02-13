@@ -7,20 +7,18 @@
   inputs,
   lib,
   ...
-}: 
-let
+}: let
   stablePkgs = import inputs.stablenixpkgs {
     system = pkgs.system;
-    config = { allowUnfree = true; };
+    config = {allowUnfree = true;};
   };
-  in
-{
+in {
   # Enable flakes and nix commands
   nix.settings.experimental-features = "nix-command flakes";
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-services.flatpak.enable = true;
+  services.flatpak.enable = true;
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -33,10 +31,15 @@ services.flatpak.enable = true;
 
   # boot.kernelPackages = pkgs.linuxPackages_6_11;
   boot.kernelPackages = pkgs.linuxPackages;
- hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
- hardware.nvidia.open = true;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  hardware.nvidia.open = true;
   hardware.nvidia.modesetting.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
+
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -69,10 +72,14 @@ services.flatpak.enable = true;
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-
+  networking.nameservers = ["192.168.1.245"];
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  # services.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
   services.desktopManager.plasma6.enable = true;
+  # Resolve the conflict for `ssh-askpass`
+  # programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
 
   # hyprland
 
@@ -86,7 +93,7 @@ services.flatpak.enable = true;
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -108,11 +115,13 @@ services.flatpak.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.deekahy = {
     isNormalUser = true;
-     # shell = pkgs.fish;
+    # shell = pkgs.fish;
     description = "deekahy";
-    extraGroups = ["networkmanager" "wheel" "libvirtd" ];
+    extraGroups = ["networkmanager" "wheel" "libvirtd"];
     packages = with stablePkgs; [
       bambu-studio
+      blender
+      davinci-resolve-studio
     ];
   };
 
@@ -134,17 +143,17 @@ services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
+    # bambu-studio
     steam
     vim
     git
     gh
     sqlite
-blender
-lutris
-vlc
-obs-studio
-sage
-davinci-resolve-studio
+    lutris
+    vlc
+    obs-studio
+    legcord
+    gnome-tweaks
   ];
 
   # Enable Steam
@@ -173,6 +182,15 @@ davinci-resolve-studio
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.firewall = {
+    enable = true;
+    allowedUDPPorts = [51820]; # WireGuard port (adjust if different)
+    allowPing = true; # Allows incoming ICMP echo requests
+    # For explicit outbound ICMP (usually allowed by default)
+    extraCommands = ''
+      iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
+    '';
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -199,4 +217,3 @@ davinci-resolve-studio
     NIXOS_OZONE_WL = "1"; # For Wayland
   };
 }
-

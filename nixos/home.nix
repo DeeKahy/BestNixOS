@@ -3,8 +3,7 @@
   pkgs,
   lib,
   ...
-}: 
-{
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "deekahy";
@@ -19,15 +18,17 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
     pkgs.vesktop
     pkgs.zed-editor
     pkgs.protonup
-pkgs.prismlauncher
-pkgs.ghostty
+    pkgs.prismlauncher
+    pkgs.ghostty
+    pkgs.alejandra
+    pkgs.neovim
+    pkgs.github-desktop
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

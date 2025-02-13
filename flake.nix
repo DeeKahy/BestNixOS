@@ -14,9 +14,14 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-cosmic, ... } @ inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    nixos-cosmic,
+    ...
+  } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
       modules = [
         ./nixos/configuration.nix
         inputs.home-manager.nixosModules.default
