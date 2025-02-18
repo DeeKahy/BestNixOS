@@ -5,7 +5,6 @@
   config,
   pkgs,
   inputs,
-  lib,
   ...
 }: let
   stablePkgs = import inputs.stablenixpkgs {
@@ -72,7 +71,7 @@ in {
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  networking.nameservers = ["192.168.1.245"];
+  networking.nameservers = ["192.168.1.245" "1.1.1.1"];
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   # services.displayManager.gdm.enable = true;
@@ -122,6 +121,10 @@ in {
       bambu-studio
       blender
       davinci-resolve-studio
+      wl-clipboard
+      xclip
+      nixd
+      nil
     ];
   };
 
@@ -153,7 +156,11 @@ in {
     vlc
     obs-studio
     legcord
-    gnome-tweaks
+    copycat
+    bottles
+    bend
+    hvm
+    cudatoolkit
   ];
 
   # Enable Steam
@@ -215,5 +222,7 @@ in {
     #   LIBVA_DRIVER_NAME = "nvidia"; # For NVIDIA GPUs, or "iHD" for Intel, "radeonsi" for AMD
     # WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1"; # For Wayland
+    NIXPKGS_ALLOW_UNFREE = "1";
   };
+  virtualisation.docker.enable = true;
 }
