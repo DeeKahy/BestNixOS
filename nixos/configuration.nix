@@ -11,6 +11,11 @@
     system = pkgs.system;
     config = {allowUnfree = true;};
   };
+
+  myPkgs = import inputs.mynixpkgs {
+    system = pkgs.system;
+    config = {allowUnfree = true;};
+  };
 in {
   # Enable flakes and nix commands
   nix.settings.experimental-features = "nix-command flakes";
@@ -114,18 +119,22 @@ in {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.deekahy = {
     isNormalUser = true;
-    # shell = pkgs.fish;
+    shell = pkgs.fish;
     description = "deekahy";
     extraGroups = ["networkmanager" "wheel" "libvirtd"];
-    packages = with stablePkgs; [
-      bambu-studio
-      blender
-      davinci-resolve-studio
-      wl-clipboard
-      xclip
-      nixd
-      nil
-    ];
+    packages = with stablePkgs;
+      [
+        bambu-studio
+        blender
+        davinci-resolve-studio
+        wl-clipboard
+        xclip
+        nixd
+        nil
+      ]
+      ++ (with myPkgs; [
+        cudatoolkit
+      ]);
   };
 
   home-manager = {
@@ -160,7 +169,6 @@ in {
     bottles
     bend
     hvm
-    cudatoolkit
   ];
 
   # Enable Steam

@@ -7,3 +7,8 @@
 No version or selection state changes.
 Closure size: 3175 -> 3175 (0 paths added, 0 paths removed, delta +0, disk usage +0B).
 [32m>[39m Activating configuration
+sudo: timed out reading password
+sudo: a password is required
+sudo: timed out reading password
+sudo: a password is required
+[32m>[39m Adding configuration to bootloader
