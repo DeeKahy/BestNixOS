@@ -31,7 +31,6 @@ in {
     ./displaymanager.nix
   ];
 
-
   # boot.kernelPackages = pkgs.linuxPackages_6_11;
   boot.kernelPackages = pkgs.linuxPackages;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
@@ -72,9 +71,8 @@ in {
     LC_TIME = "da_DK.UTF-8";
   };
 
+  networking.nameservers = ["1.1.1.1"];
 
-  networking.nameservers = [ "1.1.1.1" ];
-  
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -119,7 +117,7 @@ in {
         xclip
         nixd
         nil
-	thunderbird
+        thunderbird
       ]
       ++ (with myPkgs; [
         ]);
@@ -171,10 +169,9 @@ in {
     zed-editor
     gcc
     inputs.zen-browser.packages."${system}".default # beta
-signal-desktop
-rpi-imager
+    signal-desktop
+    rpi-imager
   ];
-  
 
   # Enable Steam
   programs.steam = {
