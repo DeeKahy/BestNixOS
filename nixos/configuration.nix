@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+# Edit this configuration
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
@@ -26,12 +26,27 @@ in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
+    # inputs.home-manager.nixosModules.default
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader configuration
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    systemd-boot.enable = false; # Disable systemd-boot
+  
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true; # Automatically find other operating systems
+      theme = pkgs.fetchFromGitHub {
+        owner = "shvchk";
+        repo = "fallout-grub-theme";
+        rev = "80734103d0b48d724f0928e8082b6755bd3b2078";
+        sha256 = "sha256-7kvLfD6Nz4cEMrmCA9yq4enyqVyqiTkVZV5y4RyUatU=";
+      };
+    };
+  };
 
   # boot.kernelPackages = pkgs.linuxPackages_6_11;
   boot.kernelPackages = pkgs.linuxPackages;
@@ -76,12 +91,14 @@ in {
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  networking.nameservers = ["192.168.1.245" "1.1.1.1"];
+  networking.nameservers = [ "1.1.1.1" ];
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
   # services.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
   services.desktopManager.plasma6.enable = true;
+  # services.desktopManager.cosmic.enable = true;
   # Resolve the conflict for `ssh-askpass`
   # programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
 
@@ -131,18 +148,18 @@ in {
         xclip
         nixd
         nil
+	thunderbird
       ]
       ++ (with myPkgs; [
-        cudatoolkit
-      ]);
+        ]);
   };
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "deekahy" = import ./home.nix;
-    };
-  };
+  # home-manager = {
+  #   extraSpecialArgs = {inherit inputs;};
+  #   users = {
+  #     "deekahy" = import ./home.nix;
+  #   };
+  # };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -157,19 +174,36 @@ in {
     #  wget
     # bambu-studio
     steam
+    cudatoolkit
     vim
     git
     gh
-    sqlite
+    # sqlite
     lutris
     vlc
     obs-studio
     legcord
     copycat
     bottles
-    bend
-    hvm
+    # bend
+    # hvm
+    # pcmanfm
+    gparted
+
+    vesktop
+    protonup
+    prismlauncher
+    ghostty
+    alejandra
+    neovim
+    github-desktop
+    zed-editor
+    gcc
+    inputs.zen-browser.packages."${system}".default # beta
+signal-desktop
+rpi-imager
   ];
+  
 
   # Enable Steam
   programs.steam = {
