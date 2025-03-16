@@ -28,6 +28,7 @@ in {
     ./hardware-configuration.nix
     # inputs.home-manager.nixosModules.default
     ./grub.nix
+    ./displaymanager.nix
   ];
 
 
@@ -71,22 +72,9 @@ in {
     LC_TIME = "da_DK.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+
   networking.nameservers = [ "1.1.1.1" ];
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  # services.displayManager.cosmic-greeter.enable = true;
-  # services.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  # services.desktopManager.cosmic.enable = true;
-  # Resolve the conflict for `ssh-askpass`
-  # programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
-
-  # hyprland
-
+  
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
