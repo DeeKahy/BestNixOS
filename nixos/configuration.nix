@@ -201,12 +201,12 @@ in {
   # networking.firewall.enable = false;
   networking.firewall = {
     enable = true;
-    allowedUDPPorts = [51820]; # WireGuard port (adjust if different)
-    allowPing = true; # Allows incoming ICMP echo requests
+    # allowedUDPPorts = [51820]; # WireGuard port (adjust if different)
+    # allowPing = true; # Allows incoming ICMP echo requests
     # For explicit outbound ICMP (usually allowed by default)
-    extraCommands = ''
-      iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
-    '';
+    # extraCommands = ''
+    #   iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
+    # '';
   };
 
   # This value determines the NixOS release from which the default
