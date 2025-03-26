@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -30,15 +29,7 @@ in {
         nil
         thunderbird
         vscode
-      ]
-      ++ (with myPkgs; [
-        ]);
+      ];
   };
 
-  # home-manager = {
-  #   extraSpecialArgs = {inherit inputs;};
-  #   users = {
-  #     "deekahy" = import ./home.nix;
-  #   };
-  # };
 }

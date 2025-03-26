@@ -6,17 +6,7 @@
   pkgs,
   inputs,
   ...
-}: let
-  stablePkgs = import inputs.stablenixpkgs {
-    system = pkgs.system;
-    config = {allowUnfree = true;};
-  };
-
-  myPkgs = import inputs.mynixpkgs {
-    system = pkgs.system;
-    config = {allowUnfree = true;};
-  };
-in {
+}: {
   # Enable flakes and nix commands
   nix.settings.experimental-features = "nix-command flakes";
   # Enable Bluetooth
