@@ -27,8 +27,9 @@ in {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     # inputs.home-manager.nixosModules.default
-    ./grub.nix
-    ./displaymanager.nix
+    ./systemconfig/grub.nix
+    ./systemconfig/displaymanager.nix
+    ./userconfig/user.nix
   ];
 
   # boot.kernelPackages = pkgs.linuxPackages_6_11;
@@ -118,6 +119,7 @@ in {
         nixd
         nil
         thunderbird
+        vscode
       ]
       ++ (with myPkgs; [
         ]);
@@ -158,10 +160,9 @@ in {
     # hvm
     # pcmanfm
     gparted
-
+    kdiskmark
     vesktop
     protonup
-    prismlauncher
     ghostty
     alejandra
     neovim
@@ -171,6 +172,9 @@ in {
     inputs.zen-browser.packages."${system}".default # beta
     signal-desktop
     rpi-imager
+    prismlauncher
+    distrobox
+    boxbuddy
   ];
 
   # Enable Steam
@@ -180,6 +184,9 @@ in {
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
+  programs.gamemode.enable = true;
+  virtualisation.waydroid.enable = true;
+  # virtualisation.lxd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
