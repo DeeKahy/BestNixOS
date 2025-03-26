@@ -29,6 +29,7 @@ in {
     # inputs.home-manager.nixosModules.default
     ./systemconfig/grub.nix
     ./systemconfig/displaymanager.nix
+    ./systemconfig/datetime.nix
     ./userconfig/user.nix
   ];
 
@@ -54,31 +55,8 @@ in {
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "Europe/Copenhagen";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_DK.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "da_DK.UTF-8";
-    LC_IDENTIFICATION = "da_DK.UTF-8";
-    LC_MEASUREMENT = "da_DK.UTF-8";
-    LC_MONETARY = "da_DK.UTF-8";
-    LC_NAME = "da_DK.UTF-8";
-    LC_NUMERIC = "da_DK.UTF-8";
-    LC_PAPER = "da_DK.UTF-8";
-    LC_TELEPHONE = "da_DK.UTF-8";
-    LC_TIME = "da_DK.UTF-8";
-  };
-
   networking.nameservers = ["1.1.1.1"];
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -104,33 +82,6 @@ in {
 
   programs.fish.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.deekahy = {
-    isNormalUser = true;
-    shell = pkgs.fish;
-    description = "deekahy";
-    extraGroups = ["networkmanager" "wheel" "libvirtd"];
-    packages = with stablePkgs;
-      [
-        bambu-studio
-        blender
-        davinci-resolve-studio
-        wl-clipboard
-        xclip
-        nixd
-        nil
-        thunderbird
-        vscode
-      ]
-      ++ (with myPkgs; [
-        ]);
-  };
-
-  # home-manager = {
-  #   extraSpecialArgs = {inherit inputs;};
-  #   users = {
-  #     "deekahy" = import ./home.nix;
-  #   };
-  # };
 
   # Install firefox.
   programs.firefox.enable = true;
