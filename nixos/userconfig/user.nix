@@ -18,18 +18,17 @@ in {
     shell = pkgs.fish;
     description = "deekahy";
     extraGroups = ["networkmanager" "wheel" "libvirtd"];
-    packages = with stablePkgs;
-      [
-        bambu-studio
-        blender
-        davinci-resolve-studio
-        wl-clipboard
-        xclip
-        nixd
-        nil
-        thunderbird
-        vscode
-      ];
+    packages = with stablePkgs; [
+      bambu-studio
+      blender
+      davinci-resolve-studio
+      wl-clipboard
+      xclip
+      nixd
+      nil
+      thunderbird
+      vscode
+      obsidian
+    ];
   };
-
 }

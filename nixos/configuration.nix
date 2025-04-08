@@ -47,7 +47,6 @@
 
   networking.nameservers = ["1.1.1.1"];
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
