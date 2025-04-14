@@ -115,6 +115,7 @@
     prismlauncher
     distrobox
     boxbuddy
+cudaPackages.cudatoolkit
   ];
 
   # Enable Steam
