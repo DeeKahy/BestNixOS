@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stablenixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     mynixpkgs.url = "github:DeeKahy/nixpkgs/master";
-    fps.url = "github:wamserma/flake-programs-sqlite";
+    # fps.url = "github:wamserma/flake-programs-sqlite";
     # fps.inputs.nixpkgs.follows = "nixpkgs";
     # nixpkgs.follows = "nixos-cosmic/nixpkgs"; # NOTE: change "nixpkgs" to "nixpkgs-stable" to use stable NixOS release
     # nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";

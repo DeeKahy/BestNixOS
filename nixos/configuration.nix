@@ -115,8 +115,16 @@
     prismlauncher
     distrobox
     boxbuddy
-cudaPackages.cudatoolkit
+    cudaPackages.cudatoolkit
+    zoxide
+
   ];
+  programs.zoxide = {
+  enable = true;
+  enableFishIntegration = true;  # Should be enabled by default, but good to be explicit
+};
+
+  programs.command-not-found.enable = true;  # Disable the default
 
   # Enable Steam
   programs.steam = {
