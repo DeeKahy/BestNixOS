@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    stablenixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    stablenixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     mynixpkgs.url = "github:DeeKahy/nixpkgs/master";
     # fps.url = "github:wamserma/flake-programs-sqlite";
     # fps.inputs.nixpkgs.follows = "nixpkgs";
