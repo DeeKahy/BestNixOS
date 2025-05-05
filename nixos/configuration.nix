@@ -13,6 +13,7 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.flatpak.enable = true;
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -25,7 +26,7 @@
 
   # boot.kernelPackages = pkgs.linuxPackages_6_11;
   boot.kernelPackages = pkgs.linuxPackages;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
   hardware.nvidia.open = true;
   hardware.nvidia.modesetting.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
@@ -84,6 +85,7 @@
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     # bambu-studio
+    inputs.self.packages."x86_64-linux".bvim
     steam
     cudatoolkit
     vim
@@ -117,14 +119,17 @@
     boxbuddy
     cudaPackages.cudatoolkit
     zoxide
-
+    xclip
+    wl-clipboard
+    cliphist
+    rust-analyzer
   ];
   programs.zoxide = {
-  enable = true;
-  enableFishIntegration = true;  # Should be enabled by default, but good to be explicit
-};
+    enable = true;
+    enableFishIntegration = true; # Should be enabled by default, but good to be explicit
+  };
 
-  programs.command-not-found.enable = true;  # Disable the default
+  programs.command-not-found.enable = true; # Disable the default
 
   # Enable Steam
   programs.steam = {
