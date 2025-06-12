@@ -23,10 +23,10 @@
     ./systemconfig/datetime.nix
     ./userconfig/user.nix
   ];
-
+programs.kdeconnect.enable = true;
   # boot.kernelPackages = pkgs.linuxPackages_6_11;
   boot.kernelPackages = pkgs.linuxPackages;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
   hardware.nvidia.open = true;
   hardware.nvidia.modesetting.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
@@ -87,10 +87,10 @@
     # bambu-studio
     inputs.self.packages."x86_64-linux".bvim
     steam
-    cudatoolkit
     vim
     git
     gh
+    brave
     # sqlite
     lutris
     vlc
@@ -117,12 +117,14 @@
     prismlauncher
     distrobox
     boxbuddy
-    cudaPackages.cudatoolkit
     zoxide
     xclip
     wl-clipboard
     cliphist
     rust-analyzer
+    protonmail-desktop
+    mullvad-browser
+    librewolf
   ];
   programs.zoxide = {
     enable = true;

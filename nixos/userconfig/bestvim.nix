@@ -4,6 +4,7 @@
   ...
 }: {
   vim = {
+    lsp.enable = true;
     statusline = {
       lualine = {
         enable = true;
@@ -35,9 +36,7 @@
       trouble.enable = true;
       lspSignature.enable = true;
     };
-
     languages = {
-      enableLSP = true;
       enableTreesitter = true;
       enableFormat = true;
 
