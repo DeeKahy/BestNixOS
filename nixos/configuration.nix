@@ -14,6 +14,11 @@
   hardware.bluetooth.powerOnBoot = true;
   services.flatpak.enable = true;
 
+
+
+  # Your existing configuration...
+
+
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -93,6 +98,7 @@ programs.kdeconnect.enable = true;
     brave
     # sqlite
     lutris
+    haguichi
     vlc
     obs-studio
     legcord
@@ -100,7 +106,8 @@ programs.kdeconnect.enable = true;
     bottles
     # bend
     # hvm
-    # pcmanfm
+    # # pcmanfm
+    logmein-hamachi
     gparted
     kdiskmark
     vesktop
@@ -163,8 +170,8 @@ programs.kdeconnect.enable = true;
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   networking.firewall = {
-    enable = true;
-    # allowedUDPPorts = [51820]; # WireGuard port (adjust if different)
+    enable = false;
+    allowedUDPPorts = [11000]; # WireGuard port (adjust if different)
     # allowPing = true; # Allows incoming ICMP echo requests
     # For explicit outbound ICMP (usually allowed by default)
     # extraCommands = ''
