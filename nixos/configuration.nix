@@ -36,10 +36,6 @@ programs.kdeconnect.enable = true;
   hardware.nvidia.modesetting.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
 
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -51,10 +47,8 @@ programs.kdeconnect.enable = true;
   # Enable networking
   networking.networkmanager.enable = true;
 
-  networking.nameservers = ["1.1.1.1"];
-
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -97,6 +91,7 @@ programs.kdeconnect.enable = true;
     gh
     brave
     # sqlite
+    teamspeak6-client
     lutris
     haguichi
     vlc
@@ -132,6 +127,7 @@ programs.kdeconnect.enable = true;
     protonmail-desktop
     mullvad-browser
     librewolf
+    protontricks
   ];
   programs.zoxide = {
     enable = true;
