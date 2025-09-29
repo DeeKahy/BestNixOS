@@ -1,32 +1,86 @@
 {
-  description = "Nixos config flake";
+  description = "FrostPhoenix's nixos configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    stablenixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    mynixpkgs.url = "github:DeeKahy/nixpkgs/master";
-    nvf.url = "github:notashelf/nvf";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-  };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-  outputs = {
-    self,
-    nixpkgs,
-    nvf,
-    ...
-  } @ inputs: {
-    packages."x86_64-linux".bvim =
-      (nvf.lib.neovimConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = [./nixos/userconfig/bestvim.nix];
-      }).neovim;
-
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./nixos/configuration.nix
-        nvf.nixosModules.default
-      ];
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    hypr-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
+
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
+
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs = {
+        hyprgraphics.follows = "hyprland/hyprgraphics";
+        hyprlang.follows = "hyprland/hyprlang";
+        hyprutils.follows = "hyprland/hyprutils";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
+
+    nur.url = "github:nix-community/NUR";
+    nix-gaming.url = "github:fufexan/nix-gaming";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    vicinae.url = "github:vicinaehq/vicinae";
+
+    superfile.url = "github:yorukot/superfile";
   };
+
+  outputs =
+    { nixpkgs, self, ... }@inputs:
+    let
+      username = "deekahy";
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      lib = nixpkgs.lib;
+    in
+    {
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/desktop ];
+          specialArgs = {
+            host = "desktop";
+            inherit self inputs username;
+          };
+        };
+        laptop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/laptop ];
+          specialArgs = {
+            host = "laptop";
+            inherit self inputs username;
+          };
+        };
+        vm = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/vm ];
+          specialArgs = {
+            host = "vm";
+            inherit self inputs username;
+          };
+        };
+      };
+    };
 }
