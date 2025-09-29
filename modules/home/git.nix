@@ -3,8 +3,8 @@
   programs.git = {
     enable = true;
 
-    userName = "Frost-Phoenix";
-    userEmail = "67cyril6767@gmail.com";
+    userName = "DeeKahy";
+    userEmail = "deekahy@smallapp.cc";
 
     extraConfig = {
       init.defaultBranch = "main";
@@ -17,7 +17,7 @@
           "gh:"
           "https://github.com/"
         ];
-        "git@github.com:frost-phoenix/".insteadOf = "fp:";
+        "git@github.com:deekahy/".insteadOf = "fp:";
       };
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
     };
@@ -35,11 +35,8 @@
 
   home.packages = [ pkgs.gh ]; # pkgs.git-lfs
 
-  xdg.configFile."git/.gitignore".text = ''
-    .vscode
-  '';
 
-  programs.zsh.shellAliases = {
+  programs.fish.shellAliases = {
     g = "lazygit";
     gf = "onefetch --number-of-file-churns 0 --no-color-palette";
     ga = "git add";

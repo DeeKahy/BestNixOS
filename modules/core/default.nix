@@ -16,5 +16,8 @@
     ./user.nix
     ./wayland.nix
     ./virtualization.nix
+    ./cosmic/default.nix
+    ./kde/default.nix
+    ./fish/default.nix
   ];
 }

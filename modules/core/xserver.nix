@@ -2,6 +2,8 @@
 {
   services = {
     xserver = {
+
+  videoDrivers = ["nvidia"];
       enable = true;
       xkb.layout = "us,fr";
     };
@@ -14,6 +16,7 @@
       enable = true;
     };
   };
+
   # To prevent getting stuck at shutdown
   systemd.settings.Manager.DefaultTimeoutStopSec = "10s";
 }

@@ -387,7 +387,10 @@ in
         "f[1], gapsout:0, gapsin:0"
       ];
 
-      monitor = [ "=,preferred,auto,auto" ];
+      monitor = [
+        "DP-1,2560x1440@144,0x0,1"
+	"HDMI-A-1,1920x1080@60,2560x360,1"
+      ];
 
       xwayland = {
         force_zero_scaling = true;
